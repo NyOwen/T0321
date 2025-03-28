@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 226,
+    "build": 227,
     "major": 5,
     "minor": 5,
     "revision": 0
@@ -350,6 +350,38 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Resource bars/pixel art/c090d31cafed0c8ef7bb4d5af75a7dbf7149bcc03a7d5d63ae997d59100e362e_Flat Bar White Border.png",
           "name": "Flat Bar White Border.png"
         }
+      },
+      {
+        "file": "assets/Flat Bar Green Fill Bar.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Flat Bar Green Fill Bar.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Resource bars/pixel art/4037e5e9b8a1ede7cb20a326256ce5d9e9a5d94715303743595e97375ceaabaf_Flat Bar Green Fill Bar.png",
+          "name": "Flat Bar Green Fill Bar.png"
+        }
+      },
+      {
+        "file": "assets/Flat Bar Orange Fill Bar.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Flat Bar Orange Fill Bar.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Resource bars/pixel art/e277b4eaf6ac17fafedb222c2900b817f1fe3018b42a46430d530f0df8d42b60_Flat Bar Orange Fill Bar.png",
+          "name": "Flat Bar Orange Fill Bar.png"
+        }
+      },
+      {
+        "file": "UpperForm.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "UpperForm.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -369,6 +401,16 @@
       "name": "HP",
       "type": "number",
       "value": 20
+    },
+    {
+      "name": "Time",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "Level",
+      "type": "number",
+      "value": 1
     }
   ],
   "layouts": [
@@ -592,16 +634,65 @@
         },
         {
           "angle": 0,
-          "customSize": true,
-          "depth": 35.29411764705882,
-          "height": 45,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "TImeUI",
+          "persistentUuid": "a98c0730-e2d0-4124-83ae-d2149598f98a",
+          "width": 0,
+          "x": 1080,
+          "y": 63,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "GreenFlatBar",
+          "persistentUuid": "21e8d203-e7f1-488b-9d72-388d53a4e8ea",
+          "width": 0,
+          "x": 1053,
+          "y": 156,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
           "layer": "UI",
-          "name": "RedFlatBar",
-          "persistentUuid": "ab50d9e8-1c75-4058-a7be-1a2bb2011e71",
-          "width": 200,
-          "x": 1033,
-          "y": 91,
-          "zOrder": 7,
+          "name": "_1PsHP",
+          "persistentUuid": "66516671-a637-494c-9b8d-5a7fcb5b6959",
+          "width": 0,
+          "x": 1020,
+          "y": 162,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 32,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Upperform",
+          "persistentUuid": "ccc17005-5de2-485b-83d0-b5f42b282937",
+          "width": 941,
+          "x": 28,
+          "y": -14,
+          "zOrder": 11,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1743,8 +1834,92 @@
           ]
         },
         {
-          "assetStoreId": "3d6c54e76a9a06cbd7629c1e78388d4ab808bbf36d644c61d6a14c9ad34d4f89",
-          "name": "RedFlatBar",
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "TImeUI",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Time:0",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 30,
+          "color": {
+            "b": 14,
+            "g": 218,
+            "r": 193
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Time:0",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 30,
+            "color": "193;218;14"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "Speed",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Speed:0",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 25,
+          "color": {
+            "b": 18,
+            "g": 124,
+            "r": 221
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Speed:0",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 25,
+            "color": "221;124;18"
+          }
+        },
+        {
+          "assetStoreId": "5c37cb58ddc519829264b5ff95dd80416c82e89b60bfa67c6c3852154ec2b632",
+          "name": "GreenFlatBar",
           "type": "PanelSpriteContinuousBar::PanelSpriteContinuousBar",
           "variables": [],
           "effects": [],
@@ -1775,7 +1950,7 @@
               "height": 24,
               "leftMargin": 0,
               "rightMargin": 0,
-              "texture": "Flat Bar Red Fill Bar.png",
+              "texture": "Flat Bar Green Fill Bar.png",
               "tiled": false,
               "topMargin": 0,
               "width": 24
@@ -1785,7 +1960,7 @@
               "height": 24,
               "leftMargin": 0,
               "rightMargin": 0,
-              "texture": "Flat Bar Red Fill Bar.png",
+              "texture": "Flat Bar Green Fill Bar.png",
               "tiled": false,
               "topMargin": 0,
               "width": 24
@@ -1795,7 +1970,7 @@
               "italic": false,
               "smoothed": true,
               "underlined": false,
-              "string": "20 / 20",
+              "string": "8 / 16",
               "font": "",
               "textAlignment": "center",
               "characterSize": 16,
@@ -1818,7 +1993,7 @@
                 "shadowOpacity": 127,
                 "smoothed": true,
                 "underlined": false,
-                "text": "20 / 20",
+                "text": "8 / 16",
                 "font": "",
                 "textAlignment": "center",
                 "verticalTextAlignment": "top",
@@ -1827,6 +2002,145 @@
               }
             }
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "_1PsHP",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "1P:",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 20,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "1P:",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 20,
+            "color": "0;0;0"
+          }
+        },
+        {
+          "assetStoreId": "5d60da81895e1d170c135f9071369e0f617f24485a6760a717ea2d56988b8c8f",
+          "name": "OrangeFlatBar",
+          "type": "PanelSpriteContinuousBar::PanelSpriteContinuousBar",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "PreviousHighValueDuration": 0,
+            "ShowLabel": true,
+            "BarTopPadding": 4,
+            "BarBottomPadding": 6,
+            "BarLeftPadding": 4,
+            "BarRightPadding": 4,
+            "MaxValue": 16,
+            "InitialValue": 8
+          },
+          "childrenContent": {
+            "Background": {
+              "bottomMargin": 6,
+              "height": 34,
+              "leftMargin": 4,
+              "rightMargin": 4,
+              "texture": "Flat Bar White Border.png",
+              "tiled": false,
+              "topMargin": 6,
+              "width": 224
+            },
+            "Buffer": {
+              "bottomMargin": 0,
+              "height": 24,
+              "leftMargin": 0,
+              "rightMargin": 0,
+              "texture": "Flat Bar Orange Fill Bar.png",
+              "tiled": false,
+              "topMargin": 0,
+              "width": 24
+            },
+            "FillBar": {
+              "bottomMargin": 0,
+              "height": 24,
+              "leftMargin": 0,
+              "rightMargin": 0,
+              "texture": "Flat Bar Orange Fill Bar.png",
+              "tiled": false,
+              "topMargin": 0,
+              "width": 24
+            },
+            "Label": {
+              "bold": false,
+              "italic": false,
+              "smoothed": true,
+              "underlined": false,
+              "string": "8 / 16",
+              "font": "",
+              "textAlignment": "center",
+              "characterSize": 16,
+              "color": {
+                "b": 255,
+                "g": 255,
+                "r": 255
+              },
+              "content": {
+                "bold": false,
+                "isOutlineEnabled": false,
+                "isShadowEnabled": false,
+                "italic": false,
+                "outlineColor": "255;255;255",
+                "outlineThickness": 2,
+                "shadowAngle": 90,
+                "shadowBlurRadius": 2,
+                "shadowColor": "0;0;0",
+                "shadowDistance": 4,
+                "shadowOpacity": 127,
+                "smoothed": true,
+                "underlined": false,
+                "text": "8 / 16",
+                "font": "",
+                "textAlignment": "center",
+                "verticalTextAlignment": "top",
+                "characterSize": 16,
+                "color": "255;255;255"
+              }
+            }
+          }
+        },
+        {
+          "assetStoreId": "",
+          "height": 32,
+          "name": "Upperform",
+          "texture": "UpperForm.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 32,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
         }
       ],
       "objectsFolderStructure": {
@@ -1842,14 +2156,92 @@
             "objectName": "Platform1"
           },
           {
-            "objectName": "RedFlatBar"
+            "objectName": "GreenFlatBar"
           },
           {
             "objectName": "Side"
+          },
+          {
+            "objectName": "TImeUI"
+          },
+          {
+            "objectName": "Upperform"
+          },
+          {
+            "objectName": "Speed"
+          },
+          {
+            "objectName": "_1PsHP"
+          },
+          {
+            "objectName": "OrangeFlatBar"
           }
         ]
       },
       "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Timer\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Time",
+                "=",
+                "ceil(TimerElapsedTime(\"Timer\"))"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "TImeUI",
+                "Text",
+                "=",
+                "\"Time:\"+ToString(Time)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": ""
+        },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
@@ -1859,7 +2251,7 @@
                 "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
               },
               "parameters": [
-                "RedFlatBar",
+                "GreenFlatBar",
                 "=",
                 "HP",
                 ""
@@ -1875,7 +2267,7 @@
                 "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::IsEmpty"
               },
               "parameters": [
-                "RedFlatBar",
+                "GreenFlatBar",
                 ""
               ]
             }
@@ -1924,7 +2316,7 @@
                 "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::IsEmpty"
               },
               "parameters": [
-                "RedFlatBar",
+                "GreenFlatBar",
                 ""
               ]
             }
@@ -2125,6 +2517,51 @@
           "conditions": [
             {
               "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "Upperform",
+                "Platform1",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HP",
+                "-",
+                "5"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreY"
+              },
+              "parameters": [
+                "Player",
+                "+",
+                "50"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "value": "PosY"
               },
               "parameters": [
@@ -2170,7 +2607,7 @@
               "parameters": [
                 "Platform",
                 "-",
-                "3"
+                "Level"
               ]
             }
           ]
@@ -2180,13 +2617,12 @@
           "conditions": [
             {
               "type": {
-                "value": "AnimatableCapability::AnimatableBehavior::ElapsedTime"
+                "value": "BuiltinCommonInstructions::CompareNumbers"
               },
               "parameters": [
-                "Player",
-                "Animation",
+                "mod(Time,2)",
                 "=",
-                ""
+                "0"
               ]
             }
           ],
@@ -2222,7 +2658,40 @@
               "parameters": [
                 "NextPF",
                 "+",
-                "75"
+                "110"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "mod(Time,30)",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Level",
+                "+",
+                "1"
               ]
             }
           ]
@@ -2365,6 +2834,10 @@
         {
           "name": "Scale",
           "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "Text",
+          "type": "TextContainerCapability::TextContainerBehavior"
         }
       ]
     }
