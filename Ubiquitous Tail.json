@@ -460,6 +460,20 @@
       "name": "Direction",
       "type": "number",
       "value": 1
+    },
+    {
+      "name": "Pack",
+      "type": "array",
+      "children": [
+        {
+          "type": "number",
+          "value": 0
+        },
+        {
+          "type": "number",
+          "value": 0
+        }
+      ]
     }
   ],
   "layouts": [
@@ -552,7 +566,7 @@
           "persistentUuid": "9576129e-6c11-490a-ac9e-ff3d7ca66f06",
           "width": 32,
           "x": 0,
-          "y": -1,
+          "y": 0,
           "zOrder": 4,
           "numberProperties": [],
           "stringProperties": [],
@@ -1928,7 +1942,7 @@
               "italic": false,
               "smoothed": true,
               "underlined": false,
-              "string": "8 / 16",
+              "string": "20 / 20",
               "font": "",
               "textAlignment": "center",
               "characterSize": 16,
@@ -1951,7 +1965,7 @@
                 "shadowOpacity": 127,
                 "smoothed": true,
                 "underlined": false,
-                "text": "8 / 16",
+                "text": "20 / 20",
                 "font": "",
                 "textAlignment": "center",
                 "verticalTextAlignment": "top",
@@ -2245,10 +2259,10 @@
           "effects": [],
           "behaviors": [
             {
-              "canBeGrabbed": false,
               "name": "Platform",
-              "platformType": "NormalPlatform",
               "type": "PlatformBehavior::PlatformBehavior",
+              "canBeGrabbed": false,
+              "platformType": "NormalPlatform",
               "yGrabOffset": 0
             }
           ]
@@ -2405,6 +2419,15 @@
                 "Animation",
                 "=",
                 "\"Dead\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PauseTimer"
+              },
+              "parameters": [
+                "",
+                "\"Timer\""
               ]
             }
           ]
@@ -2957,14 +2980,12 @@
             },
             {
               "type": {
-                "value": "MettreXY"
+                "value": "MettreY"
               },
               "parameters": [
                 "HealthPack",
-                "=",
-                "Platform0.CenterX()",
-                "=",
-                "Platform0.Y()-20"
+                "-",
+                "Level"
               ]
             }
           ]
@@ -2992,7 +3013,7 @@
                 "",
                 "Platform",
                 "\"Platform\"+ToString(RandomInRange(0,3))",
-                "RandomInRange(32,770)",
+                "RandomInRange(33,769)",
                 "NextPF",
                 ""
               ]
@@ -3125,7 +3146,7 @@
                 "value": "BuiltinCommonInstructions::CompareNumbers"
               },
               "parameters": [
-                "mod(Time,5)",
+                "mod(Time,4)",
                 "=",
                 "0"
               ]
@@ -3143,6 +3164,15 @@
             },
             {
               "type": {
+                "value": "AjoutHasard"
+              },
+              "parameters": [
+                "",
+                "Platform0"
+              ]
+            },
+            {
+              "type": {
                 "value": "BuiltinCommonInstructions::Once"
               },
               "parameters": []
@@ -3151,13 +3181,33 @@
           "actions": [
             {
               "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Pack[0]",
+                "=",
+                "Platform0.CenterX()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Pack[1]",
+                "=",
+                "Platform0.Y()-30"
+              ]
+            },
+            {
+              "type": {
                 "value": "Create"
               },
               "parameters": [
                 "",
                 "HealthPack",
-                "Platform0.CenterX()",
-                "Platform0.Y()-20",
+                "Pack[0]",
+                "Pack[1]",
                 ""
               ]
             }
@@ -3206,7 +3256,7 @@
               "parameters": [
                 "Platform",
                 "<",
-                "-40"
+                "0"
               ]
             }
           ],
@@ -3232,7 +3282,7 @@
               "parameters": [
                 "HealthPack",
                 "<",
-                "-40"
+                "0"
               ]
             }
           ],
@@ -3247,24 +3297,6 @@
               ]
             }
           ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "CollisionNP"
-              },
-              "parameters": [
-                "Platform2",
-                "Side",
-                "",
-                "",
-                ""
-              ]
-            }
-          ],
-          "actions": []
         }
       ],
       "layers": [
@@ -3370,10 +3402,6 @@
         {
           "name": "PlatformerObject",
           "type": "PlatformBehavior::PlatformerObjectBehavior"
-        },
-        {
-          "name": "RepeatTimer",
-          "type": "RepeatEveryXSeconds::RepeatTimer"
         },
         {
           "name": "Resizable",
