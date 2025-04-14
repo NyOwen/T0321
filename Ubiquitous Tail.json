@@ -1165,6 +1165,78 @@
         "name": "NewTiledSprite7",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/NewTiledSprite7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\NewTiledSprite7.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Guide1L.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Guide1L",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Guide1L2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/Guide1L2.png\"}",
+        "name": "Guide1L2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Guide1L2.png",
+        "kind": "image",
+        "metadata": "{\"localFilePath\":\"assets/Guide1L2.png\",\"extension\":\".png\"}",
+        "name": "assets\\Guide1L2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/assets_Guide1R.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "assets\\Guide1R",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Guide2L.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Guide2L",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Guide2L.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Guide2L.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Guide2R.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Guide2R",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/NewTiledSprite8.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "NewTiledSprite8",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -1173,7 +1245,36 @@
   "objectsFolderStructure": {
     "folderName": "__ROOT"
   },
-  "objectsGroups": [],
+  "objectsGroups": [
+    {
+      "name": "Platform",
+      "objects": [
+        {
+          "name": "Platform0"
+        },
+        {
+          "name": "Platform1"
+        },
+        {
+          "name": "Platform2"
+        },
+        {
+          "name": "Platform3"
+        },
+        {
+          "name": "Platform4"
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "objects": [
+        {
+          "name": "Item0"
+        }
+      ]
+    }
+  ],
   "variables": [
     {
       "name": "NextPF",
@@ -1257,8 +1358,8 @@
           "name": "Title",
           "persistentUuid": "ceb73929-b576-4021-b3ba-b1841f41168f",
           "width": 0,
-          "x": 422,
-          "y": 141,
+          "x": 417,
+          "y": 75,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -1273,8 +1374,8 @@
           "name": "P1Button",
           "persistentUuid": "3d715a1a-2af7-4e35-9e89-f2bad607c105",
           "width": 0,
-          "x": 30,
-          "y": 471,
+          "x": 507,
+          "y": 299,
           "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
@@ -1289,8 +1390,8 @@
           "name": "P2Button",
           "persistentUuid": "cd44ad8e-87b3-43e6-abf1-3ecaae206746",
           "width": 0,
-          "x": 403,
-          "y": 471,
+          "x": 509,
+          "y": 411,
           "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
@@ -1305,8 +1406,8 @@
           "name": "QuitButton",
           "persistentUuid": "3044d048-5174-4d2b-b261-51c11c60dc56",
           "width": 0,
-          "x": 778,
-          "y": 471,
+          "x": 509,
+          "y": 523,
           "zOrder": 4,
           "numberProperties": [],
           "stringProperties": [],
@@ -1321,8 +1422,8 @@
           "name": "SquareWhiteSlider",
           "persistentUuid": "5c42d174-1b8a-438b-bfbc-b97e9b47c033",
           "width": 0,
-          "x": 464,
-          "y": 376,
+          "x": 588,
+          "y": 241,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
@@ -1337,8 +1438,8 @@
           "name": "setSpeed",
           "persistentUuid": "12776dc8-e317-4d70-b73e-81d7f5ea57d6",
           "width": 0,
-          "x": 314,
-          "y": 381,
+          "x": 427,
+          "y": 246,
           "zOrder": 6,
           "numberProperties": [],
           "stringProperties": [],
@@ -1354,8 +1455,8 @@
           "name": "HighScoreUI",
           "persistentUuid": "0d2c4475-9ef2-4d98-bdcb-1de03459b7a7",
           "width": 200,
-          "x": 61,
-          "y": 246,
+          "x": 174,
+          "y": 56,
           "zOrder": 7,
           "numberProperties": [],
           "stringProperties": [],
@@ -1370,8 +1471,8 @@
           "name": "HSUIText",
           "persistentUuid": "1be8572c-2998-4848-9535-c964037d3b1d",
           "width": 0,
-          "x": 94,
-          "y": 249,
+          "x": 203,
+          "y": 61,
           "zOrder": 8,
           "numberProperties": [],
           "stringProperties": [],
@@ -1387,9 +1488,89 @@
           "name": "HSText",
           "persistentUuid": "07f7dd4d-37b9-40aa-bb8c-dbda1df41432",
           "width": 146,
-          "x": 83,
-          "y": 347,
+          "x": 196,
+          "y": 157,
           "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Guide1L",
+          "persistentUuid": "f2ca1cb1-4555-47e7-98c1-0c32cc169253",
+          "width": 0,
+          "x": 185,
+          "y": 322,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Guide1R",
+          "persistentUuid": "d8758019-bb7d-4b81-b49a-1115fb0734e8",
+          "width": 0,
+          "x": 345,
+          "y": 322,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Guide",
+          "persistentUuid": "6e902674-1b73-4519-9990-3a783efa8033",
+          "width": 0,
+          "x": 94,
+          "y": 379,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Guide2L",
+          "persistentUuid": "1aa7ab8b-5583-4b31-849e-e45850cdfa8b",
+          "width": 0,
+          "x": 184,
+          "y": 478,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Guide2R",
+          "persistentUuid": "5968986e-118f-4c24-acd1-17184f52cd79",
+          "width": 0,
+          "x": 345,
+          "y": 478,
+          "zOrder": 14,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1961,6 +2142,292 @@
             "characterSize": 50,
             "color": "0;0;0"
           }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Guide1L",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Guide1L",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Guide1L2",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 128,
+                            "y": 0
+                          },
+                          {
+                            "x": 128,
+                            "y": 128
+                          },
+                          {
+                            "x": 0,
+                            "y": 128
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Guide1R",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "assets\\Guide1R",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets\\Guide1R",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 128,
+                            "y": 0
+                          },
+                          {
+                            "x": 128,
+                            "y": 128
+                          },
+                          {
+                            "x": 0,
+                            "y": 128
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Guide",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "1P:\n\n\n\n2P:",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 30,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "1P:\n\n\n\n2P:",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 30,
+            "color": "0;0;0"
+          }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Guide2L",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Guide2L",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Guide2L",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 128,
+                            "y": 0
+                          },
+                          {
+                            "x": 128,
+                            "y": 128
+                          },
+                          {
+                            "x": 0,
+                            "y": 128
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Guide2R",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Guide2R",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Guide2R",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 128,
+                            "y": 0
+                          },
+                          {
+                            "x": 128,
+                            "y": 128
+                          },
+                          {
+                            "x": 0,
+                            "y": 128
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -1992,6 +2459,21 @@
           },
           {
             "objectName": "HSText"
+          },
+          {
+            "objectName": "Guide"
+          },
+          {
+            "objectName": "Guide1L"
+          },
+          {
+            "objectName": "Guide1R"
+          },
+          {
+            "objectName": "Guide2L"
+          },
+          {
+            "objectName": "Guide2R"
           }
         ]
       },
@@ -2205,7 +2687,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.546875,
+        "zoomFactor": 0.6455105703311478,
         "windowMask": false
       },
       "objectsGroups": [
@@ -2223,6 +2705,9 @@
             },
             {
               "name": "Platform3"
+            },
+            {
+              "name": "Platform4"
             }
           ]
         }
@@ -2303,8 +2788,8 @@
           "name": "TImeText",
           "persistentUuid": "a98c0730-e2d0-4124-83ae-d2149598f98a",
           "width": 78,
-          "x": 1081,
-          "y": 59,
+          "x": 1019,
+          "y": 55,
           "zOrder": 8,
           "numberProperties": [],
           "stringProperties": [],
@@ -2319,25 +2804,9 @@
           "name": "GreenFlatBar",
           "persistentUuid": "21e8d203-e7f1-488b-9d72-388d53a4e8ea",
           "width": 0,
-          "x": 1053,
-          "y": 156,
+          "x": 1003,
+          "y": 159,
           "zOrder": 9,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "UI",
-          "name": "_1PsHP",
-          "persistentUuid": "66516671-a637-494c-9b8d-5a7fcb5b6959",
-          "width": 0,
-          "x": 1020,
-          "y": 162,
-          "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -2368,8 +2837,8 @@
           "name": "TimeUI",
           "persistentUuid": "12e3aee8-180e-432d-b254-4291440aac5b",
           "width": 0,
-          "x": 1055,
-          "y": 17,
+          "x": 993,
+          "y": 13,
           "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
@@ -2384,9 +2853,58 @@
           "name": "TimeLabel",
           "persistentUuid": "54a1cb87-ea4a-46d2-9711-9cc1c7154af3",
           "width": 0,
-          "x": 1096,
-          "y": 21,
+          "x": 1034,
+          "y": 17,
           "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "HighScoreUI",
+          "persistentUuid": "6c5933ee-5ccd-4366-a0aa-78bf0c3d70a4",
+          "width": 0,
+          "x": 1130,
+          "y": 13,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "HSLabel",
+          "persistentUuid": "da57d507-aaa2-4d7b-af12-ba71bf96b90d",
+          "width": 0,
+          "x": 1174,
+          "y": 17,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 69,
+          "keepRatio": true,
+          "layer": "",
+          "name": "HSText",
+          "persistentUuid": "5b59836d-212e-41ba-be41-217f9bab9097",
+          "width": 72,
+          "x": 1159,
+          "y": 55,
+          "zOrder": 15,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3549,7 +4067,7 @@
           },
           "content": {
             "bold": true,
-            "isOutlineEnabled": true,
+            "isOutlineEnabled": false,
             "isShadowEnabled": false,
             "italic": false,
             "outlineColor": "0;0;0",
@@ -3699,48 +4217,6 @@
         },
         {
           "assetStoreId": "",
-          "bold": false,
-          "italic": false,
-          "name": "_1PsHP",
-          "smoothed": true,
-          "type": "TextObject::Text",
-          "underlined": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "string": "1P:",
-          "font": "",
-          "textAlignment": "left",
-          "characterSize": 20,
-          "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
-          },
-          "content": {
-            "bold": false,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
-            "italic": false,
-            "outlineColor": "255;255;255",
-            "outlineThickness": 2,
-            "shadowAngle": 90,
-            "shadowBlurRadius": 2,
-            "shadowColor": "0;0;0",
-            "shadowDistance": 4,
-            "shadowOpacity": 127,
-            "smoothed": true,
-            "underlined": false,
-            "text": "1P:",
-            "font": "",
-            "textAlignment": "left",
-            "verticalTextAlignment": "top",
-            "characterSize": 20,
-            "color": "0;0;0"
-          }
-        },
-        {
-          "assetStoreId": "",
           "height": 32,
           "name": "Upperform",
           "texture": "UpperForm.png",
@@ -3753,7 +4229,7 @@
         {
           "adaptCollisionMaskAutomatically": true,
           "assetStoreId": "",
-          "name": "HealthPack",
+          "name": "Item0",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -4005,6 +4481,169 @@
             "characterSize": 20,
             "color": "0;0;0"
           }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "HighScoreUI",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets\\NewSprite2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 128,
+                            "y": 0
+                          },
+                          {
+                            "x": 128,
+                            "y": 128
+                          },
+                          {
+                            "x": 0,
+                            "y": 128
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "HSLabel",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Best",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 20,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Best",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 20,
+            "color": "0;0;0"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "HSText",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "0",
+          "font": "",
+          "textAlignment": "center",
+          "characterSize": 60,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "0",
+            "font": "",
+            "textAlignment": "center",
+            "verticalTextAlignment": "top",
+            "characterSize": 60,
+            "color": "0;0;0"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "height": 16,
+          "name": "Platform4",
+          "texture": "NewTiledSprite8",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 200,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Platform",
+              "type": "PlatformBehavior::PlatformBehavior",
+              "canBeGrabbed": true,
+              "platformType": "NormalPlatform",
+              "yGrabOffset": 0
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -4026,6 +4665,9 @@
             "objectName": "Platform3"
           },
           {
+            "objectName": "Platform4"
+          },
+          {
             "objectName": "GreenFlatBar"
           },
           {
@@ -4038,10 +4680,7 @@
             "objectName": "Speed"
           },
           {
-            "objectName": "_1PsHP"
-          },
-          {
-            "objectName": "HealthPack"
+            "objectName": "Item0"
           },
           {
             "objectName": "Explosion1"
@@ -4054,6 +4693,15 @@
           },
           {
             "objectName": "TimeLabel"
+          },
+          {
+            "objectName": "HighScoreUI"
+          },
+          {
+            "objectName": "HSLabel"
+          },
+          {
+            "objectName": "HSText"
           }
         ]
       },
@@ -4162,6 +4810,17 @@
                 "Text",
                 "=",
                 "ToString(Time)"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "HSText",
+                "Text",
+                "=",
+                "HighScore"
               ]
             }
           ]
@@ -4294,7 +4953,7 @@
                     "value": "Wait"
                   },
                   "parameters": [
-                    "3"
+                    "1"
                   ]
                 },
                 {
@@ -4646,6 +5305,98 @@
           "conditions": [
             {
               "type": {
+                "value": "PlatformBehavior::IsObjectOnGivenFloor"
+              },
+              "parameters": [
+                "Player",
+                "PlatformerObject",
+                "Platform4",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::SimulateJumpKey"
+              },
+              "parameters": [
+                "Player",
+                "PlatformerObject"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlatformBehavior::JumpSpeed"
+              },
+              "parameters": [
+                "Player",
+                "PlatformerObject",
+                "=",
+                "550"
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "0.2"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlatformBehavior::JumpSpeed"
+              },
+              "parameters": [
+                "Player",
+                "PlatformerObject",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "HP1",
+                    "<",
+                    "20"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "HP1",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "value": "CollisionNP"
               },
               "parameters": [
@@ -4695,7 +5446,7 @@
               },
               "parameters": [
                 "Player",
-                "HealthPack",
+                "Item0",
                 "Platform1",
                 "",
                 ""
@@ -4716,8 +5467,8 @@
               "parameters": [
                 "",
                 "Explosion1",
-                "HealthPack.X()",
-                "HealthPack.Y()",
+                "Item0.X()",
+                "Item0.Y()",
                 ""
               ]
             },
@@ -4726,7 +5477,7 @@
                 "value": "Delete"
               },
               "parameters": [
-                "HealthPack",
+                "Item0",
                 ""
               ]
             }
@@ -4800,7 +5551,7 @@
               "parameters": [
                 "Player",
                 ">",
-                "720"
+                "725"
               ]
             }
           ],
@@ -4860,7 +5611,7 @@
                 "value": "MettreY"
               },
               "parameters": [
-                "HealthPack",
+                "Item0",
                 "-",
                 "Level"
               ]
@@ -4890,8 +5641,8 @@
               "parameters": [
                 "",
                 "Platform",
-                "\"Platform\"+ToString(RandomInRange(0,3))",
-                "RandomInRange(33,769)",
+                "\"Platform\"+ToString(RandomInRange(0,4))",
+                "RandomInRange(17,769)",
                 "NextPF",
                 ""
               ]
@@ -5016,11 +5767,12 @@
           "actions": [
             {
               "type": {
-                "value": "Create"
+                "value": "CreateByName"
               },
               "parameters": [
                 "",
-                "HealthPack",
+                "Item",
+                "\"Item\"+ToString(RandomInRange(0,0))",
                 "",
                 "",
                 ""
@@ -5040,7 +5792,7 @@
                 "value": "MettreAutour"
               },
               "parameters": [
-                "HealthPack",
+                "Item",
                 "Platform",
                 "25",
                 "-90"
@@ -5126,7 +5878,7 @@
                 "value": "PosY"
               },
               "parameters": [
-                "HealthPack",
+                "Item0",
                 "<",
                 "0"
               ]
@@ -5138,7 +5890,7 @@
                 "value": "Delete"
               },
               "parameters": [
-                "HealthPack",
+                "Item0",
                 ""
               ]
             }
@@ -5283,28 +6035,10 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.8700232859857295,
+        "zoomFactor": 0.7619362677197603,
         "windowMask": false
       },
-      "objectsGroups": [
-        {
-          "name": "Platform",
-          "objects": [
-            {
-              "name": "Platform0"
-            },
-            {
-              "name": "Platform1"
-            },
-            {
-              "name": "Platform2"
-            },
-            {
-              "name": "Platform3"
-            }
-          ]
-        }
-      ],
+      "objectsGroups": [],
       "variables": [],
       "instances": [
         {
@@ -5329,11 +6063,10 @@
           "customSize": true,
           "depth": 1,
           "height": 720,
-          "keepRatio": true,
           "layer": "",
           "name": "Side",
           "persistentUuid": "f82e95e3-e487-47de-9ab4-e5088bab4d84",
-          "width": 32,
+          "width": 16,
           "x": 970,
           "y": 0,
           "zOrder": 4,
@@ -5346,11 +6079,10 @@
           "customSize": true,
           "depth": 1,
           "height": 720,
-          "keepRatio": true,
           "layer": "",
           "name": "Side",
           "persistentUuid": "9576129e-6c11-490a-ac9e-ff3d7ca66f06",
-          "width": 32,
+          "width": 16,
           "x": 0,
           "y": 0,
           "zOrder": 4,
@@ -5415,7 +6147,7 @@
           "name": "_1PsHP",
           "persistentUuid": "66516671-a637-494c-9b8d-5a7fcb5b6959",
           "width": 0,
-          "x": 1059,
+          "x": 1064,
           "y": 191,
           "zOrder": 10,
           "numberProperties": [],
@@ -5464,8 +6196,8 @@
           "name": "_2PsHP",
           "persistentUuid": "54fbb5fb-5432-4ca3-b682-2950c4b82f19",
           "width": 0,
-          "x": 1192,
-          "y": 202,
+          "x": 1193,
+          "y": 272,
           "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
@@ -5506,6 +6238,7 @@
         {
           "angle": 0,
           "customSize": false,
+          "flippedY": true,
           "height": 0,
           "keepRatio": true,
           "layer": "",
@@ -5530,7 +6263,7 @@
           "persistentUuid": "7f019120-9a88-49d1-838a-65edec88e56f",
           "width": 62,
           "x": 1044,
-          "y": 226,
+          "y": 227,
           "zOrder": 16,
           "numberProperties": [],
           "stringProperties": [],
@@ -5546,8 +6279,8 @@
           "name": "P2score",
           "persistentUuid": "b0b3b01e-d6e7-4d3d-8f68-62c12b76bde6",
           "width": 67,
-          "x": 1175,
-          "y": 240,
+          "x": 1174,
+          "y": 217,
           "zOrder": 17,
           "numberProperties": [],
           "stringProperties": [],
@@ -6663,7 +7396,7 @@
           "assetStoreId": "",
           "height": 32,
           "name": "Side",
-          "texture": "NewTiledSprite2",
+          "texture": "assets\\NewTiledSprite7.png",
           "type": "TiledSpriteObject::TiledSprite",
           "width": 32,
           "variables": [],
@@ -9426,6 +10159,25 @@
             "characterSize": 40,
             "color": "255;255;255"
           }
+        },
+        {
+          "assetStoreId": "",
+          "height": 16,
+          "name": "Platform4",
+          "texture": "NewTiledSprite8",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 200,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Platform",
+              "type": "PlatformBehavior::PlatformBehavior",
+              "canBeGrabbed": true,
+              "platformType": "NormalPlatform",
+              "yGrabOffset": 0
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -9472,6 +10224,9 @@
           },
           {
             "objectName": "Platform3"
+          },
+          {
+            "objectName": "Platform4"
           },
           {
             "objectName": "Side"
@@ -9633,7 +10388,7 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": ""
+          "comment": "HPBar"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -9811,7 +10566,7 @@
                     "value": "Wait"
                   },
                   "parameters": [
-                    "3"
+                    "1"
                   ]
                 },
                 {
@@ -9881,7 +10636,7 @@
                     "value": "Wait"
                   },
                   "parameters": [
-                    "3"
+                    "1"
                   ]
                 },
                 {
@@ -10229,6 +10984,99 @@
           ]
         },
         {
+          "folded": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::IsObjectOnGivenFloor"
+              },
+              "parameters": [
+                "Player1",
+                "PlatformerObject",
+                "Platform4",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::SimulateJumpKey"
+              },
+              "parameters": [
+                "Player1",
+                "PlatformerObject"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlatformBehavior::JumpSpeed"
+              },
+              "parameters": [
+                "Player1",
+                "PlatformerObject",
+                "=",
+                "500"
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "0.2"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlatformBehavior::JumpSpeed"
+              },
+              "parameters": [
+                "Player1",
+                "PlatformerObject",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "HP1",
+                    "<",
+                    "20"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "HP1",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -10311,6 +11159,15 @@
             },
             {
               "type": {
+                "value": "ParticleSystem::ParticleColor1"
+              },
+              "parameters": [
+                "Explosion1",
+                "\"88;255;8\""
+              ]
+            },
+            {
+              "type": {
                 "value": "Delete"
               },
               "parameters": [
@@ -10388,7 +11245,7 @@
               "parameters": [
                 "Player1",
                 ">",
-                "720"
+                "725"
               ]
             }
           ],
@@ -10760,6 +11617,98 @@
           "conditions": [
             {
               "type": {
+                "value": "PlatformBehavior::IsObjectOnGivenFloor"
+              },
+              "parameters": [
+                "Player2",
+                "PlatformerObject",
+                "Platform4",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::SimulateJumpKey"
+              },
+              "parameters": [
+                "Player2",
+                "PlatformerObject"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlatformBehavior::JumpSpeed"
+              },
+              "parameters": [
+                "Player2",
+                "PlatformerObject",
+                "=",
+                "500"
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "0.2"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlatformBehavior::JumpSpeed"
+              },
+              "parameters": [
+                "Player2",
+                "PlatformerObject",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "HP2",
+                    "<",
+                    "20"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "HP2",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "value": "CollisionNP"
               },
               "parameters": [
@@ -10833,6 +11782,15 @@
                 "HealthPack.X()",
                 "HealthPack.Y()",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ParticleSystem::ParticleColor1"
+              },
+              "parameters": [
+                "Explosion1",
+                "\"255;160;0\""
               ]
             },
             {
@@ -10914,7 +11872,7 @@
               "parameters": [
                 "Player2",
                 ">",
-                "720"
+                "725"
               ]
             }
           ],
@@ -11004,8 +11962,8 @@
               "parameters": [
                 "",
                 "Platform",
-                "\"Platform\"+ToString(RandomInRange(0,3))",
-                "RandomInRange(33,769)",
+                "\"Platform\"+ToString(RandomInRange(0,4))",
+                "RandomInRange(17,769)",
                 "NextPF",
                 ""
               ]
@@ -11087,7 +12045,7 @@
                   "parameters": [
                     "Platform2",
                     "<",
-                    "32"
+                    "16"
                   ]
                 }
               ],
@@ -11116,7 +12074,7 @@
               "parameters": [
                 "mod(Time,4)",
                 "\"HPTime\"",
-                "5",
+                "4",
                 ""
               ]
             },
@@ -11146,7 +12104,7 @@
               },
               "parameters": [
                 "HealthPack",
-                "Platform0",
+                "Platform",
                 "25",
                 "-90"
               ]
@@ -11163,7 +12121,7 @@
               "parameters": [
                 "mod(Time,30)",
                 "\"LevelTime\"",
-                "30",
+                "20",
                 "30"
               ]
             },
