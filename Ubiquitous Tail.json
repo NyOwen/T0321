@@ -1253,6 +1253,14 @@
         "name": "SpeedPickup",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/SpeedPickup.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\SpeedPickup.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -6283,7 +6291,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.7619362677197603,
+        "zoomFactor": 0.6244537826599993,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -10442,6 +10450,66 @@
               "yGrabOffset": 0
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Item1",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets\\SpeedPickup.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 5,
+                            "y": 3
+                          },
+                          {
+                            "x": 29,
+                            "y": 3
+                          },
+                          {
+                            "x": 29,
+                            "y": 31
+                          },
+                          {
+                            "x": 5,
+                            "y": 31
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -10506,6 +10574,9 @@
           },
           {
             "objectName": "Item0"
+          },
+          {
+            "objectName": "Item1"
           },
           {
             "objectName": "Explosion1"
@@ -11504,6 +11575,91 @@
           "conditions": [
             {
               "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player2",
+                "Item1",
+                "Platform1",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Explosion1",
+                "Item0.X()",
+                "Item0.Y()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ParticleSystem::ParticleColor1"
+              },
+              "parameters": [
+                "Explosion1",
+                "\"255;160;0\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Item1",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlatformBehavior::MaxSpeed"
+              },
+              "parameters": [
+                "Player1",
+                "PlatformerObject",
+                "=",
+                "550"
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "5"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlatformBehavior::MaxSpeed"
+              },
+              "parameters": [
+                "Player1",
+                "PlatformerObject",
+                "=",
+                "400"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "value": "PosY"
               },
               "parameters": [
@@ -12014,6 +12170,7 @@
           ]
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -12122,6 +12279,91 @@
                     }
                   ]
                 }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player2",
+                "Item1",
+                "Platform1",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Explosion1",
+                "Item0.X()",
+                "Item0.Y()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ParticleSystem::ParticleColor1"
+              },
+              "parameters": [
+                "Explosion1",
+                "\"255;160;0\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Item1",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlatformBehavior::MaxSpeed"
+              },
+              "parameters": [
+                "Player2",
+                "PlatformerObject",
+                "=",
+                "550"
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "5"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlatformBehavior::MaxSpeed"
+              },
+              "parameters": [
+                "Player2",
+                "PlatformerObject",
+                "=",
+                "400"
               ]
             }
           ]
@@ -12377,7 +12619,7 @@
                 "value": "MettreAutour"
               },
               "parameters": [
-                "Item0",
+                "Item",
                 "Platform",
                 "25",
                 "-90"
