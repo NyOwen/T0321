@@ -1237,13 +1237,95 @@
         "name": "NewTiledSprite8",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "backgroundSpace_01.1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "backgroundSpace_01.1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/SpeedPickup.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "SpeedPickup",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
   },
-  "objects": [],
+  "objects": [
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Background",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "backgroundSpace_01.1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1024,
+                        "y": 0
+                      },
+                      {
+                        "x": 1024,
+                        "y": 1024
+                      },
+                      {
+                        "x": 0,
+                        "y": 1024
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "objectsFolderStructure": {
-    "folderName": "__ROOT"
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "objectName": "Background"
+      }
+    ]
   },
   "objectsGroups": [
     {
@@ -1271,6 +1353,9 @@
       "objects": [
         {
           "name": "Item0"
+        },
+        {
+          "name": "Item1"
         }
       ]
     }
@@ -2687,7 +2772,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.6455105703311478,
+        "zoomFactor": 0.6455105703311481,
         "windowMask": false
       },
       "objectsGroups": [
@@ -2908,6 +2993,22 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1.0013908205841446,
+          "height": 720,
+          "layer": "",
+          "name": "Background",
+          "persistentUuid": "4828a4cd-7418-4df5-9d04-27d2106c7915",
+          "width": 954,
+          "x": 16,
+          "y": 0,
+          "zOrder": -1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -2921,6 +3022,7 @@
           "effects": [],
           "behaviors": [
             {
+              "maxSpeed": 400,
               "name": "PlatformerObject",
               "type": "PlatformBehavior::PlatformerObjectBehavior",
               "ladderClimbingSpeed": 0,
@@ -2934,7 +3036,6 @@
               "jumpSpeed": 0,
               "jumpSustainTime": 0,
               "maxFallingSpeed": 700,
-              "maxSpeed": 400,
               "slopeMaxAngle": 60,
               "useLegacyTrajectory": false,
               "xGrabTolerance": 10,
@@ -4644,6 +4745,73 @@
               "yGrabOffset": 0
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Item1",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "出界刪除",
+              "type": "DestroyOutsideBehavior::DestroyOutside",
+              "extraBorder": 0
+            }
+          ],
+          "animations": [
+            {
+              "name": "SpeedPickup",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "SpeedPickup",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 5,
+                            "y": 3
+                          },
+                          {
+                            "x": 29,
+                            "y": 3
+                          },
+                          {
+                            "x": 29,
+                            "y": 31
+                          },
+                          {
+                            "x": 5,
+                            "y": 31
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -4681,6 +4849,9 @@
           },
           {
             "objectName": "Item0"
+          },
+          {
+            "objectName": "Item1"
           },
           {
             "objectName": "Explosion1"
@@ -5339,7 +5510,7 @@
                 "Player",
                 "PlatformerObject",
                 "=",
-                "550"
+                "515"
               ]
             },
             {
@@ -5438,6 +5609,7 @@
           ]
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -5546,6 +5718,82 @@
           "conditions": [
             {
               "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "Item1",
+                "Platform1",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Explosion1",
+                "Item0.X()",
+                "Item0.Y()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Item1",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlatformBehavior::MaxSpeed"
+              },
+              "parameters": [
+                "Player",
+                "PlatformerObject",
+                "=",
+                "550"
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "5"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlatformBehavior::MaxSpeed"
+              },
+              "parameters": [
+                "Player",
+                "PlatformerObject",
+                "=",
+                "400"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "value": "PosY"
               },
               "parameters": [
@@ -5611,7 +5859,7 @@
                 "value": "MettreY"
               },
               "parameters": [
-                "Item0",
+                "Item",
                 "-",
                 "Level"
               ]
@@ -5772,7 +6020,7 @@
               "parameters": [
                 "",
                 "Item",
-                "\"Item\"+ToString(RandomInRange(0,0))",
+                "\"Item\"+ToString(RandomInRange(0,1))",
                 "",
                 "",
                 ""
@@ -5878,7 +6126,7 @@
                 "value": "PosY"
               },
               "parameters": [
-                "Item0",
+                "Item",
                 "<",
                 "0"
               ]
@@ -5890,7 +6138,7 @@
                 "value": "Delete"
               },
               "parameters": [
-                "Item0",
+                "Item",
                 ""
               ]
             }
@@ -6282,6 +6530,22 @@
           "x": 1174,
           "y": 217,
           "zOrder": 17,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 720,
+          "layer": "",
+          "name": "Background",
+          "persistentUuid": "2bf41905-8972-44ed-a8f8-037a6ee94ad5",
+          "width": 954,
+          "x": 16,
+          "y": 0,
+          "zOrder": -1,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -7742,7 +8006,7 @@
         {
           "adaptCollisionMaskAutomatically": true,
           "assetStoreId": "",
-          "name": "HealthPack",
+          "name": "Item0",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -10241,7 +10505,7 @@
             "objectName": "Speed"
           },
           {
-            "objectName": "HealthPack"
+            "objectName": "Item0"
           },
           {
             "objectName": "Explosion1"
@@ -10566,7 +10830,7 @@
                     "value": "Wait"
                   },
                   "parameters": [
-                    "1"
+                    "0.5"
                   ]
                 },
                 {
@@ -10636,7 +10900,7 @@
                     "value": "Wait"
                   },
                   "parameters": [
-                    "1"
+                    "0.5"
                   ]
                 },
                 {
@@ -11023,7 +11287,7 @@
                 "Player1",
                 "PlatformerObject",
                 "=",
-                "500"
+                "515"
               ]
             },
             {
@@ -11131,7 +11395,7 @@
               },
               "parameters": [
                 "Player1",
-                "HealthPack",
+                "Item0",
                 "Platform1",
                 "",
                 ""
@@ -11152,8 +11416,8 @@
               "parameters": [
                 "",
                 "Explosion1",
-                "HealthPack.X()",
-                "HealthPack.Y()",
+                "Item0.X()",
+                "Item0.Y()",
                 ""
               ]
             },
@@ -11171,7 +11435,7 @@
                 "value": "Delete"
               },
               "parameters": [
-                "HealthPack",
+                "Item0",
                 ""
               ]
             }
@@ -11651,7 +11915,7 @@
                 "Player2",
                 "PlatformerObject",
                 "=",
-                "500"
+                "515"
               ]
             },
             {
@@ -11758,7 +12022,7 @@
               },
               "parameters": [
                 "Player2",
-                "HealthPack",
+                "Item0",
                 "Platform1",
                 "",
                 ""
@@ -11779,8 +12043,8 @@
               "parameters": [
                 "",
                 "Explosion1",
-                "HealthPack.X()",
-                "HealthPack.Y()",
+                "Item0.X()",
+                "Item0.Y()",
                 ""
               ]
             },
@@ -11798,7 +12062,7 @@
                 "value": "Delete"
               },
               "parameters": [
-                "HealthPack",
+                "Item0",
                 ""
               ]
             }
@@ -11932,7 +12196,7 @@
                 "value": "MettreY"
               },
               "parameters": [
-                "HealthPack",
+                "Item",
                 "-",
                 "Level"
               ]
@@ -12088,11 +12352,12 @@
           "actions": [
             {
               "type": {
-                "value": "Create"
+                "value": "CreateByName"
               },
               "parameters": [
                 "",
-                "HealthPack",
+                "Item",
+                "\"Item\"+ToString(RandomInRange(0,1))",
                 "",
                 "",
                 ""
@@ -12100,10 +12365,19 @@
             },
             {
               "type": {
+                "value": "AjoutHasard"
+              },
+              "parameters": [
+                "",
+                "Platform"
+              ]
+            },
+            {
+              "type": {
                 "value": "MettreAutour"
               },
               "parameters": [
-                "HealthPack",
+                "Item0",
                 "Platform",
                 "25",
                 "-90"
@@ -12179,7 +12453,7 @@
                 "value": "PosY"
               },
               "parameters": [
-                "HealthPack",
+                "Item",
                 "<",
                 "0"
               ]
@@ -12191,7 +12465,7 @@
                 "value": "Delete"
               },
               "parameters": [
-                "HealthPack",
+                "Item",
                 ""
               ]
             }
