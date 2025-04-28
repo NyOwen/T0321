@@ -1261,6 +1261,38 @@
         "name": "assets\\SpeedPickup.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "Fire.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Fire.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "Fire 32x.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Fire 32x.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Fire 32x.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Fire 32x",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Fire 32x.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Fire 32x.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -1364,6 +1396,9 @@
         },
         {
           "name": "Item1"
+        },
+        {
+          "name": "Item2"
         }
       ]
     }
@@ -1373,6 +1408,21 @@
       "name": "NextPF",
       "type": "number",
       "value": 600
+    },
+    {
+      "name": "Time",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "MaxHP1",
+      "type": "number",
+      "value": 20
+    },
+    {
+      "name": "MaxHP2",
+      "type": "number",
+      "value": 20
     },
     {
       "name": "HP1",
@@ -1385,11 +1435,6 @@
       "value": 20
     },
     {
-      "name": "Time",
-      "type": "number",
-      "value": 0
-    },
-    {
       "name": "Level",
       "type": "number",
       "value": 1
@@ -1400,17 +1445,17 @@
       "value": 1
     },
     {
+      "name": "HighScore",
+      "type": "number",
+      "value": 0
+    },
+    {
       "name": "ScoreP1",
       "type": "number",
       "value": 0
     },
     {
       "name": "ScoreP2",
-      "type": "number",
-      "value": 0
-    },
-    {
-      "name": "HighScore",
       "type": "number",
       "value": 0
     }
@@ -3017,6 +3062,22 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Item2",
+          "persistentUuid": "efbe9338-75cb-43d2-b5aa-ba4466047483",
+          "width": 0,
+          "x": 1524,
+          "y": 844,
+          "zOrder": 16,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -3030,9 +3091,9 @@
           "effects": [],
           "behaviors": [
             {
-              "maxSpeed": 400,
               "name": "PlatformerObject",
               "type": "PlatformBehavior::PlatformerObjectBehavior",
+              "maxSpeed": 400,
               "ladderClimbingSpeed": 0,
               "acceleration": 1500,
               "canGoDownFromJumpthru": false,
@@ -4820,6 +4881,67 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Item2",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Fire 32x",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Fire 32x",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 6,
+                            "y": 1
+                          },
+                          {
+                            "x": 26,
+                            "y": 1
+                          },
+                          {
+                            "x": 26,
+                            "y": 30
+                          },
+                          {
+                            "x": 6,
+                            "y": 30
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -4860,6 +4982,9 @@
           },
           {
             "objectName": "Item1"
+          },
+          {
+            "objectName": "Item2"
           },
           {
             "objectName": "Explosion1"
@@ -4949,7 +5074,7 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "HP2",
+                "MaxHP1",
                 "=",
                 "20"
               ]
@@ -5028,6 +5153,17 @@
                 "GreenFlatBar",
                 "=",
                 "HP1",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetMaxValue"
+              },
+              "parameters": [
+                "GreenFlatBar",
+                "=",
+                "MaxHP1",
                 ""
               ]
             }
@@ -5300,6 +5436,33 @@
           "conditions": [
             {
               "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "HP1",
+                ">",
+                "MaxHP1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HP1",
+                "=",
+                "MaxHP1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "value": "PlatformBehavior::IsObjectOnGivenFloor"
               },
               "parameters": [
@@ -5307,16 +5470,6 @@
                 "PlatformerObject",
                 "Platform0",
                 ""
-              ]
-            },
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "HP1",
-                "<",
-                "20"
               ]
             },
             {
@@ -5389,16 +5542,6 @@
             },
             {
               "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "HP1",
-                "<",
-                "20"
-              ]
-            },
-            {
-              "type": {
                 "value": "BuiltinCommonInstructions::Once"
               },
               "parameters": []
@@ -5447,34 +5590,15 @@
                 "Platform3",
                 ""
               ]
-            }
-          ],
-          "events": [
+            },
             {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "HP1",
-                    "<",
-                    "20"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "HP1",
-                    "+",
-                    "1"
-                  ]
-                }
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HP1",
+                "+",
+                "1"
               ]
             }
           ]
@@ -5501,6 +5625,16 @@
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HP1",
+                "+",
+                "1"
+              ]
+            },
             {
               "type": {
                 "value": "PlatformBehavior::SimulateJumpKey"
@@ -5538,35 +5672,6 @@
                 "PlatformerObject",
                 "=",
                 "0"
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "HP1",
-                    "<",
-                    "20"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "HP1",
-                    "+",
-                    "1"
-                  ]
-                }
               ]
             }
           ]
@@ -5617,7 +5722,6 @@
           ]
         },
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -5654,69 +5758,21 @@
             },
             {
               "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HP1",
+                "+",
+                "5"
+              ]
+            },
+            {
+              "type": {
                 "value": "Delete"
               },
               "parameters": [
                 "Item0",
                 ""
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "HP1",
-                    "<",
-                    "20"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "HP1",
-                    "+",
-                    "5"
-                  ]
-                }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "NumberVariable"
-                      },
-                      "parameters": [
-                        "HP1",
-                        ">=",
-                        "20"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "HP1",
-                        "=",
-                        "20"
-                      ]
-                    }
-                  ]
-                }
               ]
             }
           ]
@@ -5751,8 +5807,8 @@
               "parameters": [
                 "",
                 "Explosion1",
-                "Item0.X()",
-                "Item0.Y()",
+                "Item1.X()",
+                "Item1.Y()",
                 ""
               ]
             },
@@ -5793,6 +5849,91 @@
                 "PlatformerObject",
                 "=",
                 "400"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "Item2",
+                "Platform1",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Explosion1",
+                "Item2.X()",
+                "Item2.Y()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Item2",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MaxHP1",
+                "-",
+                "5"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "MaxHP1",
+                    "<",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "MaxHP1",
+                    "=",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -6028,7 +6169,7 @@
               "parameters": [
                 "",
                 "Item",
-                "\"Item\"+ToString(RandomInRange(0,1))",
+                "\"Item\"+ToString(RandomInRange(0,2))",
                 "",
                 "",
                 ""
@@ -10510,6 +10651,66 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Item2",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets\\Fire 32x.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 6,
+                            "y": 1
+                          },
+                          {
+                            "x": 26,
+                            "y": 1
+                          },
+                          {
+                            "x": 26,
+                            "y": 30
+                          },
+                          {
+                            "x": 6,
+                            "y": 30
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -10580,6 +10781,9 @@
           },
           {
             "objectName": "Explosion1"
+          },
+          {
+            "objectName": "Item2"
           }
         ]
       },
@@ -10638,6 +10842,16 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
+                "NextPF",
+                "=",
+                "600"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
                 "HP1",
                 "=",
                 "20"
@@ -10658,9 +10872,19 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "NextPF",
+                "MaxHP1",
                 "=",
-                "600"
+                "20"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MaxHP2",
+                "=",
+                "20"
               ]
             }
           ]
@@ -10731,6 +10955,34 @@
           "actions": [
             {
               "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "P1score",
+                "Text",
+                "=",
+                "ScoreP1"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "P2score",
+                "Text",
+                "=",
+                "ScoreP2"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
                 "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
               },
               "parameters": [
@@ -10753,24 +11005,24 @@
             },
             {
               "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetMaxValue"
               },
               "parameters": [
-                "P1score",
-                "Text",
+                "GreenFlatBar",
                 "=",
-                "ScoreP1"
+                "MaxHP1",
+                ""
               ]
             },
             {
               "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetMaxValue"
               },
               "parameters": [
-                "P2score",
-                "Text",
+                "OrangeFlatBar",
                 "=",
-                "ScoreP2"
+                "MaxHP2",
+                ""
               ]
             }
           ]
@@ -11112,6 +11364,33 @@
           "conditions": [
             {
               "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "HP1",
+                ">=",
+                "MaxHP1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HP1",
+                "=",
+                "MaxHP1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "value": "PlatformBehavior::PlatformerObjectBehavior::IsUsingControl"
               },
               "parameters": [
@@ -11146,16 +11425,6 @@
                 "PlatformerObject",
                 "Platform0",
                 ""
-              ]
-            },
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "HP1",
-                "<",
-                "20"
               ]
             },
             {
@@ -11228,16 +11497,6 @@
             },
             {
               "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "HP1",
-                "<",
-                "20"
-              ]
-            },
-            {
-              "type": {
                 "value": "BuiltinCommonInstructions::Once"
               },
               "parameters": []
@@ -11280,6 +11539,16 @@
           "actions": [
             {
               "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HP1",
+                "+",
+                "1"
+              ]
+            },
+            {
+              "type": {
                 "value": "Delete"
               },
               "parameters": [
@@ -11287,39 +11556,9 @@
                 ""
               ]
             }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "HP1",
-                    "<",
-                    "20"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "HP1",
-                    "+",
-                    "1"
-                  ]
-                }
-              ]
-            }
           ]
         },
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -11341,6 +11580,16 @@
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HP1",
+                "+",
+                "1"
+              ]
+            },
             {
               "type": {
                 "value": "PlatformBehavior::SimulateJumpKey"
@@ -11378,35 +11627,6 @@
                 "PlatformerObject",
                 "=",
                 "0"
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "HP1",
-                    "<",
-                    "20"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "HP1",
-                    "+",
-                    "1"
-                  ]
-                }
               ]
             }
           ]
@@ -11457,7 +11677,6 @@
           ]
         },
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -11480,6 +11699,16 @@
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HP1",
+                "+",
+                "5"
+              ]
+            },
             {
               "type": {
                 "value": "Create"
@@ -11510,64 +11739,6 @@
                 ""
               ]
             }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "HP1",
-                    "<",
-                    "20"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "HP1",
-                    "+",
-                    "5"
-                  ]
-                }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "NumberVariable"
-                      },
-                      "parameters": [
-                        "HP1",
-                        ">=",
-                        "20"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "HP1",
-                        "=",
-                        "20"
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
           ]
         },
         {
@@ -11578,7 +11749,7 @@
                 "value": "CollisionNP"
               },
               "parameters": [
-                "Player2",
+                "Player1",
                 "Item1",
                 "Platform1",
                 "",
@@ -11600,8 +11771,8 @@
               "parameters": [
                 "",
                 "Explosion1",
-                "Item0.X()",
-                "Item0.Y()",
+                "Item1.X()",
+                "Item1.Y()",
                 ""
               ]
             },
@@ -11611,7 +11782,7 @@
               },
               "parameters": [
                 "Explosion1",
-                "\"255;160;0\""
+                "\"88;255;8\""
               ]
             },
             {
@@ -11651,6 +11822,100 @@
                 "PlatformerObject",
                 "=",
                 "400"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player1",
+                "Item2",
+                "Platform1",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Explosion1",
+                "Item2.X()",
+                "Item2.Y()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ParticleSystem::ParticleColor1"
+              },
+              "parameters": [
+                "Explosion1",
+                "\"88;255;8\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Item2",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MaxHP1",
+                "-",
+                "5"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "MaxHP1",
+                    "<",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "MaxHP1",
+                    "=",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -11853,6 +12118,33 @@
           "conditions": [
             {
               "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "HP2",
+                ">=",
+                "MaxHP2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HP2",
+                "=",
+                "MaxHP2"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "value": "PlatformBehavior::IsObjectOnGivenFloor"
               },
               "parameters": [
@@ -11860,16 +12152,6 @@
                 "PlatformerObject",
                 "Platform0",
                 ""
-              ]
-            },
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "HP2",
-                "<",
-                "20"
               ]
             },
             {
@@ -11942,16 +12224,6 @@
             },
             {
               "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "HP2",
-                "<",
-                "20"
-              ]
-            },
-            {
-              "type": {
                 "value": "BuiltinCommonInstructions::Once"
               },
               "parameters": []
@@ -11994,40 +12266,21 @@
           "actions": [
             {
               "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HP2",
+                "+",
+                "1"
+              ]
+            },
+            {
+              "type": {
                 "value": "Delete"
               },
               "parameters": [
                 "Platform3",
                 ""
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "HP2",
-                    "<",
-                    "20"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "HP2",
-                    "+",
-                    "1"
-                  ]
-                }
               ]
             }
           ]
@@ -12054,6 +12307,16 @@
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HP2",
+                "+",
+                "1"
+              ]
+            },
             {
               "type": {
                 "value": "PlatformBehavior::SimulateJumpKey"
@@ -12091,35 +12354,6 @@
                 "PlatformerObject",
                 "=",
                 "0"
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "HP2",
-                    "<",
-                    "20"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "HP2",
-                    "+",
-                    "1"
-                  ]
-                }
               ]
             }
           ]
@@ -12170,7 +12404,6 @@
           ]
         },
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -12216,69 +12449,21 @@
             },
             {
               "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HP2",
+                "+",
+                "5"
+              ]
+            },
+            {
+              "type": {
                 "value": "Delete"
               },
               "parameters": [
                 "Item0",
                 ""
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "HP2",
-                    "<",
-                    "20"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "HP2",
-                    "+",
-                    "5"
-                  ]
-                }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "NumberVariable"
-                      },
-                      "parameters": [
-                        "HP2",
-                        ">=",
-                        "20"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "HP2",
-                        "=",
-                        "20"
-                      ]
-                    }
-                  ]
-                }
               ]
             }
           ]
@@ -12313,8 +12498,8 @@
               "parameters": [
                 "",
                 "Explosion1",
-                "Item0.X()",
-                "Item0.Y()",
+                "Item1.X()",
+                "Item1.Y()",
                 ""
               ]
             },
@@ -12364,6 +12549,100 @@
                 "PlatformerObject",
                 "=",
                 "400"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player2",
+                "Item2",
+                "Platform1",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Explosion1",
+                "Item2.X()",
+                "Item2.Y()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ParticleSystem::ParticleColor1"
+              },
+              "parameters": [
+                "Explosion1",
+                "\"255;160;0\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Item2",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MaxHP2",
+                "-",
+                "5"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "MaxHP2",
+                    "<",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "MaxHP2",
+                    "=",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -12599,7 +12878,7 @@
               "parameters": [
                 "",
                 "Item",
-                "\"Item\"+ToString(RandomInRange(0,1))",
+                "\"Item\"+ToString(RandomInRange(0,2))",
                 "",
                 "",
                 ""
