@@ -24,7 +24,7 @@
     "author": "",
     "windowWidth": 1280,
     "windowHeight": 720,
-    "latestCompilationDirectory": "",
+    "latestCompilationDirectory": "C:\\Users\\user\\Desktop\\T0513\\Server\\public",
     "maxFPS": 60,
     "minFPS": 20,
     "verticalSync": false,
@@ -2731,15 +2731,43 @@
           "conditions": [
             {
               "type": {
-                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                "value": "BuiltinCommonInstructions::Or"
               },
-              "parameters": [
-                "QuitButton",
-                ""
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                  },
+                  "parameters": [
+                    "QuitButton",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Gamepads::C_Button_pressed"
+                  },
+                  "parameters": [
+                    "",
+                    "1",
+                    "\"Back\"",
+                    ""
+                  ]
+                }
               ]
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "BackButton::doDefault"
+              },
+              "parameters": [
+                "",
+                ""
+              ]
+            },
             {
               "type": {
                 "value": "Quit"
@@ -42290,6 +42318,149 @@
           "sharedPropertyDescriptors": []
         }
       ],
+      "eventsBasedObjects": []
+    },
+    {
+      "author": "Arthur Pacaud (arthuro555)",
+      "category": "Input",
+      "extensionNamespace": "",
+      "fullName": "Back button",
+      "gdevelopVersion": ">=5.5.222",
+      "helpPath": "",
+      "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWtleWJvYXJkLWJhY2tzcGFjZSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik0yMSwxMUg2LjgzTDEwLjQxLDcuNDFMOSw2TDMsMTJMOSwxOEwxMC40MSwxNi41OEw2LjgzLDEzSDIxVjExWiIgLz48L3N2Zz4=",
+      "name": "BackButton",
+      "previewIconUrl": "https://resources.gdevelop-app.com/assets/Icons/keyboard-backspace.svg",
+      "shortDescription": "Adds interactions with the back button.",
+      "version": "1.0.0",
+      "description": "Prevents the back button from quitting the game and provides a condition to check when it's pressed (to allow customising its behavior).",
+      "origin": {
+        "identifier": "BackButton",
+        "name": "gdevelop-extension-store"
+      },
+      "tags": [
+        "back",
+        "mobile",
+        "button",
+        "input"
+      ],
+      "authorIds": [
+        "ZgrsWuRTAkXgeuPV9bo0zuEcA2w1"
+      ],
+      "dependencies": [],
+      "globalVariables": [],
+      "sceneVariables": [],
+      "eventsFunctions": [
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "onFirstSceneLoaded",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "gdjs.evtTools.back_button = {",
+                "    triggered: false,",
+                "    _popStateListener: (event) => {",
+                "        gdjs.evtTools.back_button.triggered = true;",
+                "        history.pushState(\"\", \"\"); // Push a new fake state as the old one was popped",
+                "    }",
+                "};",
+                "",
+                "// Handle back button on the web",
+                "history.pushState(\"\", \"\"); // Push a fake state to prevent switching page when clicking on back",
+                "window.addEventListener('popstate', gdjs.evtTools.back_button._popStateListener);",
+                "",
+                "// Handle back button on cordova",
+                "document.addEventListener(\"backbutton\", e => {",
+                "    e.preventDefault();",
+                "    gdjs.evtTools.back_button.triggered = true;",
+                "}, false); ",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Triggers whenever the player presses the back button.",
+          "fullName": "Back button is pressed",
+          "functionType": "Condition",
+          "name": "onBackButtonPressed",
+          "sentence": "Back button is pressed",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "eventsFunctionContext.returnValue = gdjs.evtTools.back_button.triggered;",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "This simulates the normal action of the back button. \nThis action will quit the app when in a mobile app, and go back to the previous page when in a web browser.",
+          "fullName": "Trigger back button",
+          "functionType": "Action",
+          "name": "doDefault",
+          "sentence": "Simulate back button press",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "// Close the app on cordova, as this is the default behavior",
+                "if (navigator.app) {",
+                "    navigator.app.exitApp();",
+                "} else if (navigator.device && navigator.device.exitApp) {",
+                "    navigator.device.exitApp();",
+                "} else {",
+                "    // Go to previous page as it is the default on browsers",
+                "    // Remove the listener so new fake states don't get pushed",
+                "    window.removeEventListener('popstate', gdjs.evtTools.back_button._popStateListener);",
+                "    history.back(); // Remove the state that prevents going back",
+                "    history.back(); // Actually go back",
+                "}",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "onScenePostEvents",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "gdjs.evtTools.back_button.triggered = false;",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        }
+      ],
+      "eventsBasedBehaviors": [],
       "eventsBasedObjects": []
     }
   ],
