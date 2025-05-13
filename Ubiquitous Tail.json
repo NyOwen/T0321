@@ -1,7 +1,7 @@
 {
-  "firstLayout": "",
+  "firstLayout": "Main",
   "gdVersion": {
-    "build": 228,
+    "build": 230,
     "major": 5,
     "minor": 5,
     "revision": 0
@@ -1515,8 +1515,8 @@
           "name": "Title",
           "persistentUuid": "ceb73929-b576-4021-b3ba-b1841f41168f",
           "width": 0,
-          "x": 417,
-          "y": 75,
+          "x": 459,
+          "y": 90,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -1745,7 +1745,7 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "經典下樓梯",
+          "string": "深淵探險",
           "font": "",
           "textAlignment": "left",
           "characterSize": 80,
@@ -1768,7 +1768,7 @@
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
-            "text": "經典下樓梯",
+            "text": "深淵探險",
             "font": "",
             "textAlignment": "left",
             "verticalTextAlignment": "top",
@@ -1780,6 +1780,7 @@
           "assetStoreId": "0364dbe0c9a504055bcfd65a3e898b58b0cb0aea76c15cc0b9961815b88ba4e6",
           "name": "P1Button",
           "type": "PanelSpriteButton::PanelSpriteButton",
+          "variant": "",
           "variables": [],
           "effects": [],
           "behaviors": [],
@@ -1864,6 +1865,7 @@
           "assetStoreId": "a0b220a4d2b5cc644055848ff63b0f56c2685517bf870112832c9ab4b65aaa2f",
           "name": "P2Button",
           "type": "PanelSpriteButton::PanelSpriteButton",
+          "variant": "",
           "variables": [],
           "effects": [],
           "behaviors": [],
@@ -1948,6 +1950,7 @@
           "assetStoreId": "b6e192c68f93de7846e94964878d4edf7b8071a1e295788658c044e70aff7543",
           "name": "QuitButton",
           "type": "PanelSpriteButton::PanelSpriteButton",
+          "variant": "",
           "variables": [],
           "effects": [],
           "behaviors": [],
@@ -2032,6 +2035,7 @@
           "assetStoreId": "bfeeb465a4a164b560a2215e3ff9e78e66123af43cbf7ef1f22d56fca4271c80",
           "name": "SquareWhiteSlider",
           "type": "PanelSpriteSlider::PanelSpriteSlider",
+          "variant": "",
           "variables": [],
           "effects": [],
           "behaviors": [],
@@ -3110,11 +3114,21 @@
           "effects": [],
           "behaviors": [
             {
+              "name": "PlatformerGamepadMapper",
+              "type": "Gamepads::PlatformerGamepadMapper",
+              "PlatformerCharacter": "PlatformerObject",
+              "GamepadIdentifier": 1,
+              "UseArrows": true,
+              "UseLeftStick": true,
+              "UseRightStick": false,
+              "JumpButton": "A or Cross"
+            },
+            {
+              "name": "PlatformerObject",
+              "type": "PlatformBehavior::PlatformerObjectBehavior",
               "acceleration": 2000,
               "deceleration": 2000,
               "maxSpeed": 500,
-              "name": "PlatformerObject",
-              "type": "PlatformBehavior::PlatformerObjectBehavior",
               "ladderClimbingSpeed": 0,
               "canGoDownFromJumpthru": false,
               "canGrabPlatforms": false,
@@ -4322,6 +4336,7 @@
           "assetStoreId": "5c37cb58ddc519829264b5ff95dd80416c82e89b60bfa67c6c3852154ec2b632",
           "name": "GreenFlatBar",
           "type": "PanelSpriteContinuousBar::PanelSpriteContinuousBar",
+          "variant": "",
           "variables": [],
           "effects": [],
           "behaviors": [],
@@ -5498,12 +5513,20 @@
           "conditions": [
             {
               "type": {
-                "value": "PlatformBehavior::PlatformerObjectBehavior::IsUsingControl"
+                "value": "BuiltinCommonInstructions::Or"
               },
-              "parameters": [
-                "Player",
-                "PlatformerObject",
-                "\"Left\""
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::IsUsingControl"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PlatformerObject",
+                    "\"Left\""
+                  ]
+                }
               ]
             }
           ],
@@ -5525,12 +5548,20 @@
           "conditions": [
             {
               "type": {
-                "value": "PlatformBehavior::PlatformerObjectBehavior::IsUsingControl"
+                "value": "BuiltinCommonInstructions::Or"
               },
-              "parameters": [
-                "Player",
-                "PlatformerObject",
-                "\"Right\""
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::IsUsingControl"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PlatformerObject",
+                    "\"Right\""
+                  ]
+                }
               ]
             }
           ],
@@ -6675,6 +6706,10 @@
           "type": "PlatformBehavior::PlatformBehavior"
         },
         {
+          "name": "PlatformerGamepadMapper",
+          "type": "Gamepads::PlatformerGamepadMapper"
+        },
+        {
           "name": "PlatformerObject",
           "type": "PlatformBehavior::PlatformerObjectBehavior"
         },
@@ -6991,6 +7026,7 @@
           "effects": [],
           "behaviors": [
             {
+              "isFolded": true,
               "name": "Platform",
               "type": "PlatformBehavior::PlatformBehavior",
               "canBeGrabbed": false,
@@ -6998,12 +7034,22 @@
               "yGrabOffset": 0
             },
             {
-              "acceleration": 2000,
-              "deceleration": 2000,
+              "name": "PlatformerGamepadMapper",
+              "type": "Gamepads::PlatformerGamepadMapper",
+              "PlatformerCharacter": "PlatformerObject",
+              "GamepadIdentifier": 1,
+              "UseArrows": false,
+              "UseLeftStick": true,
+              "UseRightStick": false,
+              "JumpButton": "A or Cross"
+            },
+            {
               "isFolded": true,
-              "maxSpeed": 500,
               "name": "PlatformerObject",
               "type": "PlatformBehavior::PlatformerObjectBehavior",
+              "acceleration": 2000,
+              "deceleration": 2000,
+              "maxSpeed": 500,
               "ignoreDefaultControls": false,
               "ladderClimbingSpeed": 0,
               "canGoDownFromJumpthru": false,
@@ -8211,6 +8257,7 @@
           "assetStoreId": "5c37cb58ddc519829264b5ff95dd80416c82e89b60bfa67c6c3852154ec2b632",
           "name": "GreenFlatBar",
           "type": "PanelSpriteContinuousBar::PanelSpriteContinuousBar",
+          "variant": "",
           "variables": [],
           "effects": [],
           "behaviors": [],
@@ -8339,6 +8386,7 @@
           "assetStoreId": "5d60da81895e1d170c135f9071369e0f617f24485a6760a717ea2d56988b8c8f",
           "name": "OrangeFlatBar",
           "type": "PanelSpriteContinuousBar::PanelSpriteContinuousBar",
+          "variant": "",
           "variables": [],
           "effects": [],
           "behaviors": [],
@@ -8595,6 +8643,7 @@
           "effects": [],
           "behaviors": [
             {
+              "isFolded": true,
               "name": "Platform",
               "type": "PlatformBehavior::PlatformBehavior",
               "canBeGrabbed": true,
@@ -8602,11 +8651,22 @@
               "yGrabOffset": 0
             },
             {
+              "name": "PlatformerGamepadMapper",
+              "type": "Gamepads::PlatformerGamepadMapper",
+              "PlatformerCharacter": "PlatformerObject",
+              "GamepadIdentifier": 1,
+              "UseArrows": true,
+              "UseLeftStick": false,
+              "UseRightStick": true,
+              "JumpButton": "A or Cross"
+            },
+            {
+              "isFolded": true,
+              "name": "PlatformerObject",
+              "type": "PlatformBehavior::PlatformerObjectBehavior",
               "acceleration": 2000,
               "deceleration": 2000,
               "maxSpeed": 500,
-              "name": "PlatformerObject",
-              "type": "PlatformBehavior::PlatformerObjectBehavior",
               "canGoDownFromJumpthru": false,
               "canGrabWithoutMoving": false,
               "ignoreDefaultControls": true,
@@ -12546,11 +12606,31 @@
           "conditions": [
             {
               "type": {
-                "value": "KeyFromTextPressed"
+                "value": "BuiltinCommonInstructions::Or"
               },
-              "parameters": [
-                "Player2",
-                "\"a\""
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "Player2",
+                    "\"a\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Gamepads::C_Axis_pushed"
+                  },
+                  "parameters": [
+                    "",
+                    "1",
+                    "\"Right\"",
+                    "\"Left\"",
+                    ""
+                  ]
+                }
               ]
             }
           ],
@@ -12582,11 +12662,31 @@
           "conditions": [
             {
               "type": {
-                "value": "KeyFromTextPressed"
+                "value": "BuiltinCommonInstructions::Or"
               },
-              "parameters": [
-                "Player2",
-                "\"d\""
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "Player2",
+                    "\"d\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Gamepads::C_Axis_pushed"
+                  },
+                  "parameters": [
+                    "",
+                    "1",
+                    "\"Right\"",
+                    "\"Right\"",
+                    ""
+                  ]
+                }
               ]
             }
           ],
@@ -13849,6 +13949,10 @@
           "type": "PlatformBehavior::PlatformBehavior"
         },
         {
+          "name": "PlatformerGamepadMapper",
+          "type": "Gamepads::PlatformerGamepadMapper"
+        },
+        {
           "name": "PlatformerObject",
           "type": "PlatformBehavior::PlatformerObjectBehavior"
         },
@@ -14563,6 +14667,165 @@
           "fullName": "Resource bar (continuous)",
           "isUsingLegacyInstancesRenderer": true,
           "name": "PanelSpriteContinuousBar",
+          "objects": [
+            {
+              "assetStoreId": "",
+              "bold": false,
+              "italic": false,
+              "name": "Label",
+              "smoothed": true,
+              "type": "TextObject::Text",
+              "underlined": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "string": "2 / 3",
+              "font": "",
+              "textAlignment": "center",
+              "characterSize": 20,
+              "color": {
+                "b": 0,
+                "g": 0,
+                "r": 0
+              },
+              "content": {
+                "bold": false,
+                "isOutlineEnabled": false,
+                "isShadowEnabled": false,
+                "italic": false,
+                "outlineColor": "255;255;255",
+                "outlineThickness": 2,
+                "shadowAngle": 90,
+                "shadowBlurRadius": 2,
+                "shadowColor": "0;0;0",
+                "shadowDistance": 4,
+                "shadowOpacity": 127,
+                "smoothed": true,
+                "underlined": false,
+                "text": "2 / 3",
+                "font": "",
+                "textAlignment": "center",
+                "verticalTextAlignment": "top",
+                "characterSize": 20,
+                "color": "0;0;0"
+              }
+            },
+            {
+              "assetStoreId": "",
+              "bottomMargin": 0,
+              "height": 32,
+              "leftMargin": 0,
+              "name": "FillBar",
+              "rightMargin": 0,
+              "texture": "",
+              "tiled": true,
+              "topMargin": 0,
+              "type": "PanelSpriteObject::PanelSprite",
+              "width": 32,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "ResourceBar",
+                  "type": "PanelSpriteContinuousBar::ResourceBar",
+                  "Value": 1,
+                  "MaxValue": 3,
+                  "PreviousValue": 0,
+                  "CurrentValue": 1
+                },
+                {
+                  "name": "Tween",
+                  "type": "Tween::TweenBehavior"
+                }
+              ]
+            },
+            {
+              "assetStoreId": "",
+              "bottomMargin": 0,
+              "height": 32,
+              "leftMargin": 0,
+              "name": "Buffer",
+              "rightMargin": 0,
+              "texture": "",
+              "tiled": true,
+              "topMargin": 0,
+              "type": "PanelSpriteObject::PanelSprite",
+              "width": 32,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "Tween",
+                  "type": "Tween::TweenBehavior"
+                }
+              ]
+            },
+            {
+              "assetStoreId": "",
+              "bottomMargin": 0,
+              "height": 32,
+              "leftMargin": 0,
+              "name": "Background",
+              "rightMargin": 0,
+              "texture": "",
+              "tiled": true,
+              "topMargin": 0,
+              "type": "PanelSpriteObject::PanelSprite",
+              "width": 32,
+              "variables": [],
+              "effects": [],
+              "behaviors": []
+            }
+          ],
+          "objectsFolderStructure": {
+            "folderName": "__ROOT",
+            "children": [
+              {
+                "objectName": "Label"
+              },
+              {
+                "objectName": "FillBar"
+              },
+              {
+                "objectName": "Buffer"
+              },
+              {
+                "objectName": "Background"
+              }
+            ]
+          },
+          "objectsGroups": [],
+          "layers": [
+            {
+              "ambientLightColorB": 200,
+              "ambientLightColorG": 200,
+              "ambientLightColorR": 200,
+              "camera3DFarPlaneDistance": 10000,
+              "camera3DFieldOfView": 45,
+              "camera3DNearPlaneDistance": 3,
+              "cameraType": "",
+              "followBaseLayerCamera": false,
+              "isLightingLayer": false,
+              "isLocked": false,
+              "name": "",
+              "renderingType": "",
+              "visibility": true,
+              "cameras": [
+                {
+                  "defaultSize": true,
+                  "defaultViewport": true,
+                  "height": 0,
+                  "viewportBottom": 1,
+                  "viewportLeft": 0,
+                  "viewportRight": 1,
+                  "viewportTop": 0,
+                  "width": 0
+                }
+              ],
+              "effects": []
+            }
+          ],
+          "instances": [],
           "eventsFunctions": [
             {
               "fullName": "",
@@ -16311,165 +16574,7 @@
               "name": "LabelVerticalAnchorTarget"
             }
           ],
-          "objects": [
-            {
-              "assetStoreId": "",
-              "bold": false,
-              "italic": false,
-              "name": "Label",
-              "smoothed": true,
-              "type": "TextObject::Text",
-              "underlined": false,
-              "variables": [],
-              "effects": [],
-              "behaviors": [],
-              "string": "2 / 3",
-              "font": "",
-              "textAlignment": "center",
-              "characterSize": 20,
-              "color": {
-                "b": 0,
-                "g": 0,
-                "r": 0
-              },
-              "content": {
-                "bold": false,
-                "isOutlineEnabled": false,
-                "isShadowEnabled": false,
-                "italic": false,
-                "outlineColor": "255;255;255",
-                "outlineThickness": 2,
-                "shadowAngle": 90,
-                "shadowBlurRadius": 2,
-                "shadowColor": "0;0;0",
-                "shadowDistance": 4,
-                "shadowOpacity": 127,
-                "smoothed": true,
-                "underlined": false,
-                "text": "2 / 3",
-                "font": "",
-                "textAlignment": "center",
-                "verticalTextAlignment": "top",
-                "characterSize": 20,
-                "color": "0;0;0"
-              }
-            },
-            {
-              "assetStoreId": "",
-              "bottomMargin": 0,
-              "height": 32,
-              "leftMargin": 0,
-              "name": "FillBar",
-              "rightMargin": 0,
-              "texture": "",
-              "tiled": true,
-              "topMargin": 0,
-              "type": "PanelSpriteObject::PanelSprite",
-              "width": 32,
-              "variables": [],
-              "effects": [],
-              "behaviors": [
-                {
-                  "name": "ResourceBar",
-                  "type": "PanelSpriteContinuousBar::ResourceBar",
-                  "Value": 1,
-                  "MaxValue": 3,
-                  "PreviousValue": 0,
-                  "CurrentValue": 1
-                },
-                {
-                  "name": "Tween",
-                  "type": "Tween::TweenBehavior"
-                }
-              ]
-            },
-            {
-              "assetStoreId": "",
-              "bottomMargin": 0,
-              "height": 32,
-              "leftMargin": 0,
-              "name": "Buffer",
-              "rightMargin": 0,
-              "texture": "",
-              "tiled": true,
-              "topMargin": 0,
-              "type": "PanelSpriteObject::PanelSprite",
-              "width": 32,
-              "variables": [],
-              "effects": [],
-              "behaviors": [
-                {
-                  "name": "Tween",
-                  "type": "Tween::TweenBehavior"
-                }
-              ]
-            },
-            {
-              "assetStoreId": "",
-              "bottomMargin": 0,
-              "height": 32,
-              "leftMargin": 0,
-              "name": "Background",
-              "rightMargin": 0,
-              "texture": "",
-              "tiled": true,
-              "topMargin": 0,
-              "type": "PanelSpriteObject::PanelSprite",
-              "width": 32,
-              "variables": [],
-              "effects": [],
-              "behaviors": []
-            }
-          ],
-          "objectsFolderStructure": {
-            "folderName": "__ROOT",
-            "children": [
-              {
-                "objectName": "Label"
-              },
-              {
-                "objectName": "FillBar"
-              },
-              {
-                "objectName": "Buffer"
-              },
-              {
-                "objectName": "Background"
-              }
-            ]
-          },
-          "objectsGroups": [],
-          "layers": [
-            {
-              "ambientLightColorB": 200,
-              "ambientLightColorG": 200,
-              "ambientLightColorR": 200,
-              "camera3DFarPlaneDistance": 10000,
-              "camera3DFieldOfView": 45,
-              "camera3DNearPlaneDistance": 3,
-              "cameraType": "",
-              "followBaseLayerCamera": false,
-              "isLightingLayer": false,
-              "isLocked": false,
-              "name": "",
-              "renderingType": "",
-              "visibility": true,
-              "cameras": [
-                {
-                  "defaultSize": true,
-                  "defaultViewport": true,
-                  "height": 0,
-                  "viewportBottom": 1,
-                  "viewportLeft": 0,
-                  "viewportRight": 1,
-                  "viewportTop": 0,
-                  "width": 0
-                }
-              ],
-              "effects": []
-            }
-          ],
-          "instances": []
+          "variants": []
         }
       ]
     },
@@ -30886,6 +30991,165 @@
           "fullName": "Button (panel sprite)",
           "isUsingLegacyInstancesRenderer": true,
           "name": "PanelSpriteButton",
+          "objects": [
+            {
+              "assetStoreId": "",
+              "bold": false,
+              "italic": false,
+              "name": "Label",
+              "smoothed": true,
+              "type": "TextObject::Text",
+              "underlined": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "string": "Text",
+              "font": "",
+              "textAlignment": "",
+              "characterSize": 20,
+              "color": {
+                "b": 0,
+                "g": 0,
+                "r": 0
+              },
+              "content": {
+                "bold": false,
+                "isOutlineEnabled": false,
+                "isShadowEnabled": false,
+                "italic": false,
+                "outlineColor": "255;255;255",
+                "outlineThickness": 2,
+                "shadowAngle": 90,
+                "shadowBlurRadius": 2,
+                "shadowColor": "0;0;0",
+                "shadowDistance": 4,
+                "shadowOpacity": 127,
+                "smoothed": true,
+                "underlined": false,
+                "text": "Text",
+                "font": "",
+                "textAlignment": "",
+                "verticalTextAlignment": "top",
+                "characterSize": 20,
+                "color": "0;0;0"
+              }
+            },
+            {
+              "assetStoreId": "",
+              "bottomMargin": 0,
+              "height": 32,
+              "leftMargin": 0,
+              "name": "Idle",
+              "rightMargin": 0,
+              "texture": "",
+              "tiled": false,
+              "topMargin": 0,
+              "type": "PanelSpriteObject::PanelSprite",
+              "width": 32,
+              "variables": [
+                {
+                  "folded": true,
+                  "name": "State",
+                  "type": "string",
+                  "value": "Idle"
+                }
+              ],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "ButtonFSM",
+                  "type": "PanelSpriteButton::ButtonFSM",
+                  "ShouldCheckHovering": true
+                }
+              ]
+            },
+            {
+              "assetStoreId": "",
+              "bottomMargin": 0,
+              "height": 32,
+              "leftMargin": 0,
+              "name": "Hovered",
+              "rightMargin": 0,
+              "texture": "",
+              "tiled": false,
+              "topMargin": 0,
+              "type": "PanelSpriteObject::PanelSprite",
+              "width": 32,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "Tween",
+                  "type": "Tween::TweenBehavior"
+                }
+              ]
+            },
+            {
+              "assetStoreId": "",
+              "bottomMargin": 0,
+              "height": 32,
+              "leftMargin": 0,
+              "name": "Pressed",
+              "rightMargin": 0,
+              "texture": "",
+              "tiled": false,
+              "topMargin": 0,
+              "type": "PanelSpriteObject::PanelSprite",
+              "width": 32,
+              "variables": [],
+              "effects": [],
+              "behaviors": []
+            }
+          ],
+          "objectsFolderStructure": {
+            "folderName": "__ROOT",
+            "children": [
+              {
+                "objectName": "Label"
+              },
+              {
+                "objectName": "Idle"
+              },
+              {
+                "objectName": "Hovered"
+              },
+              {
+                "objectName": "Pressed"
+              }
+            ]
+          },
+          "objectsGroups": [],
+          "layers": [
+            {
+              "ambientLightColorB": 200,
+              "ambientLightColorG": 200,
+              "ambientLightColorR": 200,
+              "camera3DFarPlaneDistance": 10000,
+              "camera3DFieldOfView": 45,
+              "camera3DNearPlaneDistance": 3,
+              "cameraType": "",
+              "followBaseLayerCamera": false,
+              "isLightingLayer": false,
+              "isLocked": false,
+              "name": "",
+              "renderingType": "",
+              "visibility": true,
+              "cameras": [
+                {
+                  "defaultSize": true,
+                  "defaultViewport": true,
+                  "height": 0,
+                  "viewportBottom": 1,
+                  "viewportLeft": 0,
+                  "viewportRight": 1,
+                  "viewportTop": 0,
+                  "width": 0
+                }
+              ],
+              "effects": []
+            }
+          ],
+          "instances": [],
           "eventsFunctions": [
             {
               "fullName": "",
@@ -32258,165 +32522,7 @@
               "name": "HoveredFadeOutDuration"
             }
           ],
-          "objects": [
-            {
-              "assetStoreId": "",
-              "bold": false,
-              "italic": false,
-              "name": "Label",
-              "smoothed": true,
-              "type": "TextObject::Text",
-              "underlined": false,
-              "variables": [],
-              "effects": [],
-              "behaviors": [],
-              "string": "Text",
-              "font": "",
-              "textAlignment": "",
-              "characterSize": 20,
-              "color": {
-                "b": 0,
-                "g": 0,
-                "r": 0
-              },
-              "content": {
-                "bold": false,
-                "isOutlineEnabled": false,
-                "isShadowEnabled": false,
-                "italic": false,
-                "outlineColor": "255;255;255",
-                "outlineThickness": 2,
-                "shadowAngle": 90,
-                "shadowBlurRadius": 2,
-                "shadowColor": "0;0;0",
-                "shadowDistance": 4,
-                "shadowOpacity": 127,
-                "smoothed": true,
-                "underlined": false,
-                "text": "Text",
-                "font": "",
-                "textAlignment": "",
-                "verticalTextAlignment": "top",
-                "characterSize": 20,
-                "color": "0;0;0"
-              }
-            },
-            {
-              "assetStoreId": "",
-              "bottomMargin": 0,
-              "height": 32,
-              "leftMargin": 0,
-              "name": "Idle",
-              "rightMargin": 0,
-              "texture": "",
-              "tiled": false,
-              "topMargin": 0,
-              "type": "PanelSpriteObject::PanelSprite",
-              "width": 32,
-              "variables": [
-                {
-                  "folded": true,
-                  "name": "State",
-                  "type": "string",
-                  "value": "Idle"
-                }
-              ],
-              "effects": [],
-              "behaviors": [
-                {
-                  "name": "ButtonFSM",
-                  "type": "PanelSpriteButton::ButtonFSM",
-                  "ShouldCheckHovering": true
-                }
-              ]
-            },
-            {
-              "assetStoreId": "",
-              "bottomMargin": 0,
-              "height": 32,
-              "leftMargin": 0,
-              "name": "Hovered",
-              "rightMargin": 0,
-              "texture": "",
-              "tiled": false,
-              "topMargin": 0,
-              "type": "PanelSpriteObject::PanelSprite",
-              "width": 32,
-              "variables": [],
-              "effects": [],
-              "behaviors": [
-                {
-                  "name": "Tween",
-                  "type": "Tween::TweenBehavior"
-                }
-              ]
-            },
-            {
-              "assetStoreId": "",
-              "bottomMargin": 0,
-              "height": 32,
-              "leftMargin": 0,
-              "name": "Pressed",
-              "rightMargin": 0,
-              "texture": "",
-              "tiled": false,
-              "topMargin": 0,
-              "type": "PanelSpriteObject::PanelSprite",
-              "width": 32,
-              "variables": [],
-              "effects": [],
-              "behaviors": []
-            }
-          ],
-          "objectsFolderStructure": {
-            "folderName": "__ROOT",
-            "children": [
-              {
-                "objectName": "Label"
-              },
-              {
-                "objectName": "Idle"
-              },
-              {
-                "objectName": "Hovered"
-              },
-              {
-                "objectName": "Pressed"
-              }
-            ]
-          },
-          "objectsGroups": [],
-          "layers": [
-            {
-              "ambientLightColorB": 200,
-              "ambientLightColorG": 200,
-              "ambientLightColorR": 200,
-              "camera3DFarPlaneDistance": 10000,
-              "camera3DFieldOfView": 45,
-              "camera3DNearPlaneDistance": 3,
-              "cameraType": "",
-              "followBaseLayerCamera": false,
-              "isLightingLayer": false,
-              "isLocked": false,
-              "name": "",
-              "renderingType": "",
-              "visibility": true,
-              "cameras": [
-                {
-                  "defaultSize": true,
-                  "defaultViewport": true,
-                  "height": 0,
-                  "viewportBottom": 1,
-                  "viewportLeft": 0,
-                  "viewportRight": 1,
-                  "viewportTop": 0,
-                  "width": 0
-                }
-              ],
-              "effects": []
-            }
-          ],
-          "instances": []
+          "variants": []
         }
       ]
     },
@@ -34062,6 +34168,173 @@
           "fullName": "Slider",
           "isUsingLegacyInstancesRenderer": true,
           "name": "PanelSpriteSlider",
+          "objects": [
+            {
+              "assetStoreId": "",
+              "bold": false,
+              "italic": false,
+              "name": "Label",
+              "smoothed": true,
+              "type": "TextObject::Text",
+              "underlined": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "string": "It displays the value when it changes.",
+              "font": "",
+              "textAlignment": "",
+              "characterSize": 20,
+              "color": {
+                "b": 0,
+                "g": 0,
+                "r": 0
+              },
+              "content": {
+                "bold": false,
+                "isOutlineEnabled": false,
+                "isShadowEnabled": false,
+                "italic": false,
+                "outlineColor": "255;255;255",
+                "outlineThickness": 2,
+                "shadowAngle": 90,
+                "shadowBlurRadius": 2,
+                "shadowColor": "0;0;0",
+                "shadowDistance": 4,
+                "shadowOpacity": 127,
+                "smoothed": true,
+                "underlined": false,
+                "text": "It displays the value when it changes.",
+                "font": "",
+                "textAlignment": "",
+                "verticalTextAlignment": "top",
+                "characterSize": 20,
+                "color": "0;0;0"
+              }
+            },
+            {
+              "assetStoreId": "",
+              "bottomMargin": 0,
+              "height": 32,
+              "leftMargin": 0,
+              "name": "Thumb",
+              "rightMargin": 0,
+              "texture": "",
+              "tiled": false,
+              "topMargin": 0,
+              "type": "PanelSpriteObject::PanelSprite",
+              "width": 32,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "Draggable",
+                  "type": "DraggableBehavior::Draggable",
+                  "checkCollisionMask": false
+                }
+              ]
+            },
+            {
+              "assetStoreId": "",
+              "bottomMargin": 0,
+              "height": 32,
+              "leftMargin": 0,
+              "name": "FillBar",
+              "rightMargin": 0,
+              "texture": "",
+              "tiled": true,
+              "topMargin": 0,
+              "type": "PanelSpriteObject::PanelSprite",
+              "width": 32,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "Slider",
+                  "type": "PanelSpriteSlider::Slider",
+                  "Value": 0,
+                  "MinValue": 0,
+                  "MaxValue": 1,
+                  "StepSize": 1
+                }
+              ]
+            },
+            {
+              "assetStoreId": "",
+              "bottomMargin": 0,
+              "height": 32,
+              "leftMargin": 0,
+              "name": "Background",
+              "rightMargin": 0,
+              "texture": "",
+              "tiled": true,
+              "topMargin": 0,
+              "type": "PanelSpriteObject::PanelSprite",
+              "width": 32,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "ButtonFSM",
+                  "type": "PanelSpriteSlider::ButtonFSM",
+                  "ShouldCheckHovering": true,
+                  "State": "Idle",
+                  "TouchId": 0,
+                  "TouchIsInside": false,
+                  "MouseIsInside": false,
+                  "Index": 0
+                }
+              ]
+            }
+          ],
+          "objectsFolderStructure": {
+            "folderName": "__ROOT",
+            "children": [
+              {
+                "objectName": "Label"
+              },
+              {
+                "objectName": "Thumb"
+              },
+              {
+                "objectName": "FillBar"
+              },
+              {
+                "objectName": "Background"
+              }
+            ]
+          },
+          "objectsGroups": [],
+          "layers": [
+            {
+              "ambientLightColorB": 200,
+              "ambientLightColorG": 200,
+              "ambientLightColorR": 200,
+              "camera3DFarPlaneDistance": 10000,
+              "camera3DFieldOfView": 45,
+              "camera3DNearPlaneDistance": 3,
+              "cameraType": "",
+              "followBaseLayerCamera": false,
+              "isLightingLayer": false,
+              "isLocked": false,
+              "name": "",
+              "renderingType": "",
+              "visibility": true,
+              "cameras": [
+                {
+                  "defaultSize": true,
+                  "defaultViewport": true,
+                  "height": 0,
+                  "viewportBottom": 1,
+                  "viewportLeft": 0,
+                  "viewportRight": 1,
+                  "viewportTop": 0,
+                  "width": 0
+                }
+              ],
+              "effects": []
+            }
+          ],
+          "instances": [],
           "eventsFunctions": [
             {
               "fullName": "",
@@ -36109,173 +36382,7 @@
               "name": "ShowLabel"
             }
           ],
-          "objects": [
-            {
-              "assetStoreId": "",
-              "bold": false,
-              "italic": false,
-              "name": "Label",
-              "smoothed": true,
-              "type": "TextObject::Text",
-              "underlined": false,
-              "variables": [],
-              "effects": [],
-              "behaviors": [],
-              "string": "It displays the value when it changes.",
-              "font": "",
-              "textAlignment": "",
-              "characterSize": 20,
-              "color": {
-                "b": 0,
-                "g": 0,
-                "r": 0
-              },
-              "content": {
-                "bold": false,
-                "isOutlineEnabled": false,
-                "isShadowEnabled": false,
-                "italic": false,
-                "outlineColor": "255;255;255",
-                "outlineThickness": 2,
-                "shadowAngle": 90,
-                "shadowBlurRadius": 2,
-                "shadowColor": "0;0;0",
-                "shadowDistance": 4,
-                "shadowOpacity": 127,
-                "smoothed": true,
-                "underlined": false,
-                "text": "It displays the value when it changes.",
-                "font": "",
-                "textAlignment": "",
-                "verticalTextAlignment": "top",
-                "characterSize": 20,
-                "color": "0;0;0"
-              }
-            },
-            {
-              "assetStoreId": "",
-              "bottomMargin": 0,
-              "height": 32,
-              "leftMargin": 0,
-              "name": "Thumb",
-              "rightMargin": 0,
-              "texture": "",
-              "tiled": false,
-              "topMargin": 0,
-              "type": "PanelSpriteObject::PanelSprite",
-              "width": 32,
-              "variables": [],
-              "effects": [],
-              "behaviors": [
-                {
-                  "name": "Draggable",
-                  "type": "DraggableBehavior::Draggable",
-                  "checkCollisionMask": false
-                }
-              ]
-            },
-            {
-              "assetStoreId": "",
-              "bottomMargin": 0,
-              "height": 32,
-              "leftMargin": 0,
-              "name": "FillBar",
-              "rightMargin": 0,
-              "texture": "",
-              "tiled": true,
-              "topMargin": 0,
-              "type": "PanelSpriteObject::PanelSprite",
-              "width": 32,
-              "variables": [],
-              "effects": [],
-              "behaviors": [
-                {
-                  "name": "Slider",
-                  "type": "PanelSpriteSlider::Slider",
-                  "Value": 0,
-                  "MinValue": 0,
-                  "MaxValue": 1,
-                  "StepSize": 1
-                }
-              ]
-            },
-            {
-              "assetStoreId": "",
-              "bottomMargin": 0,
-              "height": 32,
-              "leftMargin": 0,
-              "name": "Background",
-              "rightMargin": 0,
-              "texture": "",
-              "tiled": true,
-              "topMargin": 0,
-              "type": "PanelSpriteObject::PanelSprite",
-              "width": 32,
-              "variables": [],
-              "effects": [],
-              "behaviors": [
-                {
-                  "name": "ButtonFSM",
-                  "type": "PanelSpriteSlider::ButtonFSM",
-                  "ShouldCheckHovering": true,
-                  "State": "Idle",
-                  "TouchId": 0,
-                  "TouchIsInside": false,
-                  "MouseIsInside": false,
-                  "Index": 0
-                }
-              ]
-            }
-          ],
-          "objectsFolderStructure": {
-            "folderName": "__ROOT",
-            "children": [
-              {
-                "objectName": "Label"
-              },
-              {
-                "objectName": "Thumb"
-              },
-              {
-                "objectName": "FillBar"
-              },
-              {
-                "objectName": "Background"
-              }
-            ]
-          },
-          "objectsGroups": [],
-          "layers": [
-            {
-              "ambientLightColorB": 200,
-              "ambientLightColorG": 200,
-              "ambientLightColorR": 200,
-              "camera3DFarPlaneDistance": 10000,
-              "camera3DFieldOfView": 45,
-              "camera3DNearPlaneDistance": 3,
-              "cameraType": "",
-              "followBaseLayerCamera": false,
-              "isLightingLayer": false,
-              "isLocked": false,
-              "name": "",
-              "renderingType": "",
-              "visibility": true,
-              "cameras": [
-                {
-                  "defaultSize": true,
-                  "defaultViewport": true,
-                  "height": 0,
-                  "viewportBottom": 1,
-                  "viewportLeft": 0,
-                  "viewportRight": 1,
-                  "viewportTop": 0,
-                  "width": 0
-                }
-              ],
-              "effects": []
-            }
-          ],
-          "instances": []
+          "variants": []
         }
       ]
     },
