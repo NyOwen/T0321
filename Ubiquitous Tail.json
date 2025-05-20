@@ -1,7 +1,7 @@
 {
   "firstLayout": "Main",
   "gdVersion": {
-    "build": 230,
+    "build": 231,
     "major": 5,
     "minor": 5,
     "revision": 0
@@ -1818,7 +1818,7 @@
               "italic": false,
               "smoothed": true,
               "underlined": false,
-              "string": "1 Player",
+              "string": "1 Player (A)",
               "font": "Roboto-Regular.ttf",
               "textAlignment": "center",
               "characterSize": 40,
@@ -1841,7 +1841,7 @@
                 "shadowOpacity": 127,
                 "smoothed": true,
                 "underlined": false,
-                "text": "1 Player",
+                "text": "1 Player (A)",
                 "font": "Roboto-Regular.ttf",
                 "textAlignment": "center",
                 "verticalTextAlignment": "top",
@@ -1903,7 +1903,7 @@
               "italic": false,
               "smoothed": true,
               "underlined": false,
-              "string": "2 Players",
+              "string": "2 Players (B)",
               "font": "Roboto-Regular.ttf",
               "textAlignment": "center",
               "characterSize": 40,
@@ -1926,7 +1926,7 @@
                 "shadowOpacity": 127,
                 "smoothed": true,
                 "underlined": false,
-                "text": "2 Players",
+                "text": "2 Players (B)",
                 "font": "Roboto-Regular.ttf",
                 "textAlignment": "center",
                 "verticalTextAlignment": "top",
@@ -2661,11 +2661,30 @@
           "conditions": [
             {
               "type": {
-                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                "value": "BuiltinCommonInstructions::Or"
               },
-              "parameters": [
-                "P1Button",
-                ""
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                  },
+                  "parameters": [
+                    "P1Button",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Gamepads::C_Button_pressed"
+                  },
+                  "parameters": [
+                    "",
+                    "1",
+                    "\"A\"",
+                    ""
+                  ]
+                }
               ]
             }
           ],
@@ -2696,11 +2715,30 @@
           "conditions": [
             {
               "type": {
-                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                "value": "BuiltinCommonInstructions::Or"
               },
-              "parameters": [
-                "P2Button",
-                ""
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                  },
+                  "parameters": [
+                    "P2Button",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Gamepads::C_Button_pressed"
+                  },
+                  "parameters": [
+                    "",
+                    "1",
+                    "\"B\"",
+                    ""
+                  ]
+                }
               ]
             }
           ],
@@ -2976,8 +3014,8 @@
           "layer": "",
           "name": "TImeText",
           "persistentUuid": "a98c0730-e2d0-4124-83ae-d2149598f98a",
-          "width": 78,
-          "x": 1019,
+          "width": 127,
+          "x": 996,
           "y": 55,
           "zOrder": 8,
           "numberProperties": [],
@@ -3090,8 +3128,8 @@
           "layer": "",
           "name": "HSText",
           "persistentUuid": "5b59836d-212e-41ba-be41-217f9bab9097",
-          "width": 72,
-          "x": 1159,
+          "width": 135,
+          "x": 1125,
           "y": 55,
           "zOrder": 15,
           "numberProperties": [],
