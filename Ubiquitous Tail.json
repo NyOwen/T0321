@@ -1464,11 +1464,6 @@
       "value": 1
     },
     {
-      "name": "HighScore",
-      "type": "number",
-      "value": 0
-    },
-    {
       "name": "ScoreP1",
       "type": "number",
       "value": 0
@@ -1477,6 +1472,22 @@
       "name": "ScoreP2",
       "type": "number",
       "value": 0
+    },
+    {
+      "name": "Data",
+      "type": "structure",
+      "children": [
+        {
+          "name": "HighScore",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "StartLevel",
+          "type": "number",
+          "value": 1
+        }
+      ]
     }
   ],
   "layouts": [
@@ -2651,7 +2662,7 @@
                 "HSText",
                 "Text",
                 "=",
-                "HighScore"
+                "Data.HighScore"
               ]
             }
           ]
@@ -2695,6 +2706,16 @@
               },
               "parameters": [
                 "Level",
+                "=",
+                "SquareWhiteSlider.Value()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Data.StartLevel",
                 "=",
                 "SquareWhiteSlider.Value()"
               ]
@@ -5321,7 +5342,7 @@
                 "HSText",
                 "Text",
                 "=",
-                "HighScore"
+                "Data.HighScore"
               ]
             }
           ]
@@ -5439,7 +5460,7 @@
                   "parameters": [
                     "Time",
                     ">=",
-                    "HighScore"
+                    "Data.HighScore"
                   ]
                 }
               ],
@@ -5449,9 +5470,37 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "HighScore",
+                    "Data.HighScore",
                     "=",
                     "Time"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SendAsyncRequest"
+                      },
+                      "parameters": [
+                        "\"http://127.0.0.1/postscore\"",
+                        "ToJSON(Data)",
+                        "\"POST\"",
+                        "\"application/json\"",
+                        "",
+                        ""
+                      ]
+                    }
                   ]
                 }
               ]
