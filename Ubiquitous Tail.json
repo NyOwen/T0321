@@ -2667,7 +2667,7 @@
                 "HSText",
                 "Text",
                 "=",
-                "LeadBoard[0]"
+                "LeadBoard[0].Score"
               ]
             }
           ]
@@ -5353,7 +5353,7 @@
                 "HSText",
                 "Text",
                 "=",
-                "LeadBoard[0]"
+                "Data.StartLevel"
               ]
             }
           ]
@@ -5488,7 +5488,7 @@
                     "value": "SendAsyncRequest"
                   },
                   "parameters": [
-                    "\"http://127.0.0.1/postscore\"",
+                    "\"/postscore\"",
                     "ToJSON(Data)",
                     "\"POST\"",
                     "\"application/json\"",
