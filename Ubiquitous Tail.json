@@ -24,7 +24,7 @@
     "author": "",
     "windowWidth": 1280,
     "windowHeight": 720,
-    "latestCompilationDirectory": "C:\\Users\\user\\Desktop\\T0513\\Server\\public",
+    "latestCompilationDirectory": "C:\\Users\\user\\Desktop\\Server\\public",
     "maxFPS": 60,
     "minFPS": 20,
     "verticalSync": false,
@@ -1478,7 +1478,7 @@
       "type": "structure",
       "children": [
         {
-          "name": "HighScore",
+          "name": "Score",
           "type": "number",
           "value": 0
         },
@@ -1488,6 +1488,11 @@
           "value": 1
         }
       ]
+    },
+    {
+      "name": "LeadBoard",
+      "type": "array",
+      "children": []
     }
   ],
   "layouts": [
@@ -2662,7 +2667,7 @@
                 "HSText",
                 "Text",
                 "=",
-                "Data.HighScore"
+                "LeadBoard[0]"
               ]
             }
           ]
@@ -2960,7 +2965,13 @@
           ]
         }
       ],
-      "variables": [],
+      "variables": [
+        {
+          "name": "rank",
+          "type": "string",
+          "value": "0"
+        }
+      ],
       "instances": [
         {
           "angle": 0,
@@ -5342,7 +5353,7 @@
                 "HSText",
                 "Text",
                 "=",
-                "Data.HighScore"
+                "LeadBoard[0]"
               ]
             }
           ]
@@ -5455,13 +5466,9 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                    "value": "BuiltinCommonInstructions::Once"
                   },
-                  "parameters": [
-                    "Time",
-                    ">=",
-                    "Data.HighScore"
-                  ]
+                  "parameters": []
                 }
               ],
               "actions": [
@@ -5470,59 +5477,57 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "Data.HighScore",
+                    "Data.Score",
                     "=",
                     "Time"
+                  ]
+                },
+                {
+                  "type": {
+                    "await": true,
+                    "value": "SendAsyncRequest"
+                  },
+                  "parameters": [
+                    "\"http://127.0.0.1/postscore\"",
+                    "ToJSON(Data)",
+                    "\"POST\"",
+                    "\"application/json\"",
+                    "rank",
+                    ""
                   ]
                 }
               ],
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "BuiltinCommonInstructions::Once"
-                      },
-                      "parameters": []
-                    }
-                  ],
+                  "conditions": [],
                   "actions": [
                     {
                       "type": {
-                        "value": "SendAsyncRequest"
+                        "await": true,
+                        "value": "JSONToVariableStructure2"
                       },
                       "parameters": [
-                        "\"http://127.0.0.1/postscore\"",
-                        "ToJSON(Data)",
-                        "\"POST\"",
-                        "\"application/json\"",
-                        "",
+                        "rank",
+                        "LeadBoard"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PopScene"
+                      },
+                      "parameters": [
                         ""
                       ]
                     }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Wait"
-                  },
-                  "parameters": [
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "PopScene"
-                  },
-                  "parameters": [
-                    ""
                   ]
                 }
               ]
