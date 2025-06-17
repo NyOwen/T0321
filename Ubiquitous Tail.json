@@ -5353,7 +5353,7 @@
                 "HSText",
                 "Text",
                 "=",
-                "Data.StartLevel"
+                "LeadBoard[0].Score"
               ]
             }
           ]
